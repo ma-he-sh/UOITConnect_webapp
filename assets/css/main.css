@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import 'https://fonts.googleapis.com/css?family=Titillium+Web:300,400';
+@import 'login.css';
+html,
+body {
+    font-family: 'Titillium Web', sans-serif;
+    background: url(../img_svg/block_img.png);
+    background-color: #0A0A0A;
+    margin: 0;
+}
+
+input,
+button,
+a {
+    font-family: 'Titillium Web', sans-serif;
+}
+light-txt {
+    color: #B3FFF7 !important;
+}
