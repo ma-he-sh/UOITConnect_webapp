@@ -1,6 +1,8 @@
 @charset "UTF-8";
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web:300,400';
 @import 'login.css';
+@import 'dashb.css';
+@import 'font-awesome.min.css';
 html,
 body {
     font-family: 'Titillium Web', sans-serif;
@@ -14,6 +16,10 @@ button,
 a {
     font-family: 'Titillium Web', sans-serif;
 }
+
 light-txt {
     color: #B3FFF7 !important;
+}
+.red-color {
+    color: #FD563F;
 }

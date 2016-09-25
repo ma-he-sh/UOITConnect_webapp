@@ -160,7 +160,8 @@
     border-style: none;
     font-size: 14px;
     text-indent: 10px;
-    border: 1px solid rgba(76, 170, 190, 0.2);
+    border: 2px solid rgba(76, 170, 190, 0.2);
+    border-radius: 2px;
     box-sizing: border-box;
     background: transparent;
     color: #BEE5E7;
@@ -190,27 +191,13 @@
     cursor: pointer;
     box-sizing: border-box;
 }
-.input-btn-signin {
-    width: 100%;
-    height: 30px;
-    border-style: none;
-    border-radius: 2px;
-    background-color: rgba(80, 100, 107, 0.1) !important;
-    border: 2px solid rgba(76, 170, 190, 0.2);
-    color: rgba(76, 170, 190, 0.8);
-    font-size: 14px;
-    cursor: pointer;
-    box-sizing: border-box;
-}
+
 
 .input-btn:hover {
     background-color: rgba(80, 100, 107, 0.2) !important;
     color: rgba(76, 170, 190, 0.8);
 }
-.input-btn-signin:hover {
-    background-color: rgba(80, 100, 107, 0.2) !important;
-    color: rgba(76, 170, 190, 0.8);
-}
+
 
 .login-input-btn-block {
     height: 50px;

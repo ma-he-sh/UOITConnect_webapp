@@ -1,0 +1,77 @@
+
+.dash-header-container {
+    width: 100%;
+    height: 50px;
+    position: static;
+    top: 0;
+    z-index: 10000;
+}
+
+
+
+.dash-user-container {
+    width: auto;
+    height: 50px;
+    float: right;
+}
+
+.dash-user-img-id {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    float: left;
+    border: 1px solid rgba(76, 170, 190, 0.2);
+}
+
+.dash-user-name-txt {
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    float: left;
+    line-height: 50px;
+    color: #4CAABE;
+}
+
+.dash-user-signout {
+    width: 50px;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+
+.dash-main-menu-container {
+    width: 600px;
+    height: 600px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    border: 1px solid rgba(76, 170, 190, 0.2);
+    box-sizing: border-box;
+}
+
+.dash-outer-ring {
+    width: 600px;
+    height: 600px;
+    float: left;
+    border: 1px solid rgba(76, 170, 190, 0.2);
+    border-radius: 50%;
+}
+
+.dash-outer-ring-btn {
+    width: 300px;
+    height: 300px;
+    float: left;
+    border: 1px solid rgba(76, 170, 190, 0.2);
+    box-sizing: border-box;
+}
+
+.radiusOne {
+    border-top-left-radius: 100%;
+}
