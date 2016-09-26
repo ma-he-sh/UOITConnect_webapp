@@ -5,21 +5,29 @@
 @import 'font-awesome.min.css';
 html,
 body {
-    font-family: 'Titillium Web', sans-serif;
-    background: url(../img_svg/block_img.png);
-    background-color: #0A0A0A;
-    margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+  background: url(../img_svg/block_img.png);
+  background-color: #0A0A0A;
+  margin: 0;
 }
 
 input,
 button,
 a {
-    font-family: 'Titillium Web', sans-serif;
+  font-family: 'Titillium Web', sans-serif;
 }
 
 light-txt {
-    color: #B3FFF7 !important;
+  color: #B3FFF7 !important;
 }
+
 .red-color {
-    color: #FD563F;
+  color: #FD563F !important;
+}
+red-txt {
+  color: #F15843 !important;
+}
+
+green-txt {
+  color: #1cd017 !important;
 }

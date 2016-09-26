@@ -206,3 +206,16 @@
     padding: 5px;
     box-sizing: border-box;
 }
+.notify-wrapper {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50000;
+  box-sizing: border-box;
+  padding: 10px;
+  text-align: center;
+}

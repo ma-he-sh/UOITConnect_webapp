@@ -8,7 +8,7 @@
 </head>
 
 <?php
-    require_once 'assets/php/user_login.php';
+  require_once 'assets/php/user_login.php';
 ?>
 
   <body>
@@ -66,6 +66,10 @@
           </div>
         </form>
       </div>
+    </div>
+
+    <div class="notify-wrapper">
+      <?php echo $return_msg; ?>
     </div>
 
   </body>

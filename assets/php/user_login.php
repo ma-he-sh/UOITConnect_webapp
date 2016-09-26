@@ -1,6 +1,7 @@
 <?php
   #user login action
   include 'db.php';
+  $return_msg = '';
 
   #USER LOGIN
   if(isset($_POST['btn_signin_submit'])){
@@ -37,13 +38,23 @@
 
         if (!$retval1){
         #ERROR REPORT
-          #regError();
+          $return_msg = error_msg('User Register Error');
         }
         else{
           #WELCOME REPORT
-          #regSuccess();
+          $return_msg = good_msg('User Register Successful');
         }
     }
+    $return_msg = error_msg('Passwords not matched');
     mysqli_close($conn);
+  }
+
+
+  function error_msg($msg_txt){
+    return '<red-txt><i class="fa fa-exclamation-circle" aria-hidden="true"></i> ERROR: '.$msg_txt.'</red-txt>';
+  }
+
+  function good_msg($msg_txt){
+    return '<green-txt><i class="fa fa-check" aria-hidden="true"></i>'.$msg_txt.'</green-txt>';
   }
 ?>
