@@ -7,9 +7,18 @@ html,
 body {
   font-family: 'Titillium Web', sans-serif;
   background: url(../img_svg/block_img.png);
-  background-color: #0A0A0A;
+  background-color: white;
   margin: 0;
 }
+
+
+/*
+
+003c71  Dark blue
+rgba(0077cA) light blue
+#fffff
+
+*/
 
 input,
 button,
@@ -24,6 +33,7 @@ light-txt {
 .red-color {
   color: #FD563F !important;
 }
+
 red-txt {
   color: #F15843 !important;
 }
