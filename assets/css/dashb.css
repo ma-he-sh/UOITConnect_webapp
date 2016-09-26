@@ -64,14 +64,6 @@
     border-radius: 50%;
 }
 
-.dash-outer-ring-btn {
-    width: 300px;
-    height: 300px;
-    float: left;
-    border: 1px solid rgba(76, 170, 190, 0.2);
-    box-sizing: border-box;
-}
 
-.radiusOne {
-    border-top-left-radius: 100%;
-}
+
+
