@@ -45,7 +45,9 @@
           $return_msg = good_msg('User Register Successful');
         }
     }
-    $return_msg = error_msg('Passwords not matched');
+    else{
+      $return_msg = error_msg('Passwords not matched');
+    }
     mysqli_close($conn);
   }
 

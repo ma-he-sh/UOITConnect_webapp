@@ -1,10 +1,12 @@
 
 .dash-header-container {
     width: 100%;
-    height: 50px;
+    height: 100px;
     position: static;
     top: 0;
     z-index: 10000;
+    background-color: #003c71;
+    border-bottom: 1px solid #E3E3E3;
 }
 
 
@@ -29,7 +31,7 @@
     padding-right: 5px;
     float: left;
     line-height: 50px;
-    color: #4CAABE;
+    color: white;
 }
 
 .dash-user-signout {
@@ -43,27 +45,42 @@
 
 
 
-.dash-main-menu-container {
-    width: 600px;
-    height: 600px;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    position: absolute;
-    border: 1px solid rgba(76, 170, 190, 0.2);
-    box-sizing: border-box;
+
+
+
+
+
+
+
+
+.dash-header {
+  width: 100%;
+  height: 50px;
+  float: left;
 }
 
-.dash-outer-ring {
-    width: 600px;
-    height: 600px;
-    float: left;
-    border: 1px solid rgba(76, 170, 190, 0.2);
-    border-radius: 50%;
+.dash-nav-wrapper {
+  width: 700px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
 }
 
+.dash-nav-card {
+  float: left;
+  background-color: aquamarine;
+}
 
+.max-card {
+  width: 300px;
+  height: 400px;
+}
 
-
+.min-card {
+  width: 200px;
+  height: 200px;
+}
