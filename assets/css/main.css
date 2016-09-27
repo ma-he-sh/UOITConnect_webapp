@@ -7,14 +7,14 @@ html,
 body {
   font-family: 'Titillium Web', sans-serif;
   background: url(../img_svg/block_img.png);
-  background-color: white;
+  background-color: #eee;
   margin: 0;
 }
 
 
 /*
 
-003c71  Dark blue
+#003c71  Dark blue
 rgba(0077cA) light blue
 #fffff
 
@@ -41,3 +41,4 @@ red-txt {
 green-txt {
   color: #1cd017 !important;
 }
+

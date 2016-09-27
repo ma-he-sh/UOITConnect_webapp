@@ -59,6 +59,14 @@
   float: left;
 }
 
+.dash-header-nav {
+  width: 100%;
+  height: 50px;
+  float: left;
+  box-sizing: border-box;
+  background-color: white !important;
+}
+
 .dash-nav-wrapper {
   width: 700px;
   height: 400px;
@@ -72,7 +80,9 @@
 
 .dash-nav-card {
   float: left;
-  background-color: aquamarine;
+  background-color: transparent;
+  box-sizing: border-box;
+  padding: 2px;
 }
 
 .max-card {
@@ -83,4 +93,59 @@
 .min-card {
   width: 200px;
   height: 200px;
+}
+
+.dash-card {
+  width: 100%;
+  height: 100%;
+  padding-top: 58px;
+  background-color: white;
+  box-sizing: border-box;
+  color: #4E585C;
+}
+
+.dash-nav-btn {
+  width: 40px;
+  height: 40px;
+  float: left;
+  margin: 5px;
+  line-height: 40px;
+  text-align: center;
+  color: #4E585C;
+  cursor: pointer;
+}
+
+.dash-card-logo {
+  width: 80px;
+  height: 80px;
+  margin-left: 58px;
+  line-height: 100px;
+  text-align: center;
+}
+
+.dash-card-text {
+  width: 100%;
+  height: 40px;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+}
+
+.dash-user-img {
+  width: 120px;
+  height: 120px;
+  background-color: aquamarine;
+  margin-left: 88px;
+  border-radius: 50%;
+}
+
+.dash-name-txt {
+  width: 100%;
+  height: auto;
+  line-height: 45px;
+  font-size: 18px;
+  float: left;
+  text-align: center;
+  margin-top: 5px;
 }
