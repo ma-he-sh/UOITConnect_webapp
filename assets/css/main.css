@@ -12,13 +12,28 @@ body {
 }
 
 
-/*
+/* scroll bar =========================*/
 
-#003c71  Dark blue
-rgba(0077cA) light blue
-#fffff
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: rgba(238, 238, 238, 0.1);
+}
 
-*/
+::-webkit-scrollbar-track {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(53, 92, 125, 0.5);
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: rgba(238, 238, 238, 0.1);
+}
+
+::-webkit-scrollbar-corner {
+  background-color: rgba(238, 238, 238, 0.8);
+}
 
 input,
 button,
@@ -42,3 +57,10 @@ green-txt {
   color: #1cd017 !important;
 }
 
+.transition {
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
