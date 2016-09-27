@@ -13,11 +13,11 @@
 ?>
 
   <body>
-    <div class="signin-wrapper">
+    <div class="signin-wrapper transition">
       <div class="login-content">
         <div class="login-header">
-          USER
-          <light-txt>SIGNIN</light-txt>
+          <b>USER
+            <light-txt>SIGNIN</light-txt></b>
         </div>
 
         <!--signin form-->

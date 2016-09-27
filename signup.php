@@ -12,11 +12,11 @@
 ?>
 
   <body>
-    <div class="login-wrapper">
+    <div class="login-wrapper transition">
       <div class="login-content">
         <div class="login-header">
-          USER
-          <light-txt>SIGNUP</light-txt>
+          <b>USER
+            <light-txt>SIGNUP</light-txt></b>
         </div>
         <form action="" method="post">
           <div class="login-input-label w100">

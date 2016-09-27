@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<?php
+  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
+?>
+
+  <body>
+    <!--header-->
+    <div class="dash-header-container">
+      <div class="dash-header">
+        <div class="dash-user-container">
+          <div class="dash-user-img-id"></div>
+          <div class="dash-user-name-txt">FName LName</div>
+          <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+        </div>
+      </div>
+      <div class="dash-header-nav">
+        <a href="#">
+          <div class="dash-nav-btn">
+            <i class="fa fa-th-large" aria-hidden="true"></i>
+          </div>
+        </a>
+        <div class="dash-nav-seperator">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </div>
+        <a href="#">
+          <div class="dash-nav-txt-wrapper">Your Schedule</div>
+        </a>
+      </div>
+    </div>
+
+    <!--content-->
+    <div class="dash-user-sch-wrapper" id="insertDIV">
+      <div class="dash-sch-wrapper">
+        <div class="dash-sch-header">Customize your schedule</div>
+      </div>
+
+      <!--user course inputs-->
+      <div class="dash-sch-insert-card transition">
+        <div class="dash-flex-input-container">
+          <input type="text" class="dash-sch-input-txt" placeholder="| Enter Course ID">
+          <button type="submit" class="dash-sch-submit-btn" onclick="display_new_card();"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+        </div>
+        <div class="dash-sch-header-wrapper">
+          <green-txt>Course submitted successfully</green-txt>
+        </div>
+      </div>
+      <div class="dash-sch-insert-card transition">
+        <div class="dash-flex-input-container">
+          <input type="text" class="dash-sch-input-txt" placeholder="| Enter Course ID">
+          <button type="submit" class="dash-sch-submit-btn" onclick="display_new_card();"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+        </div>
+        <div class="dash-sch-header-wrapper">
+          <green-txt>Course submitted successfully</green-txt>
+        </div>
+      </div>
+      <div class="dash-sch-insert-card transition">
+        <div class="dash-flex-input-container">
+          <input type="text" class="dash-sch-input-txt" placeholder="| Enter Course ID">
+          <button type="submit" class="dash-sch-submit-btn" onclick="display_new_card();"><i class="fa fa-plus-circle fa-2x" aria-hidden="true"></i></button>
+        </div>
+        <div class="dash-sch-header-wrapper">
+          <green-txt>Course submitted successfully</green-txt>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function display_new_card() {
+        alert "clicked";
+
+      }
+    </script>
+
+    <!--
+    
+    var insertCARD;
+        var insertDIV = document.getElementById('insertDIV');
+
+        insertCARD.innerHTML = '<div class="dash-sch-insert-card transition"> < div class = "dash-flex-input-container" > < input type = "text"
+        class = "dash-sch-input-txt"
+        placeholder = "| Enter Course ID" >
+          < button type = "submit"
+        class = "dash-sch-submit-btn"
+        onclick = "display_new_card();" > < i class = "fa fa-plus-circle fa-2x"
+        aria - hidden = "true" > < /i></button >
+          < /div> < div class = "dash-sch-header-wrapper" > < green - txt > Course submitted successfully < /green - txt > < /div > < /div > ';
+
+        insertCARD.appendChild(insertCARD); -->
+  </body>
+
+</html>
