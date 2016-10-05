@@ -440,6 +440,7 @@
   padding-right: 10px;
 }
 
+
 .season-btn {
   box-sizing: border-box;
   border-top: 1px solid #eee;
@@ -473,4 +474,14 @@
   background-color: aquamarine;
   line-height: 50px;
   text-align: center;
+}
+
+.dash-sch-header-btn {
+  width: auto;
+  height: 50px;
+  line-height: 50px;
+  float: right;
+  font-size: 16px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
