@@ -1,11 +1,12 @@
 <?php
   #user login action
   include 'db.php';
+  include 'validate.php';
   $return_msg = '';
 
   #USER LOGIN
   if(isset($_POST['btn_signin_submit'])){
-    $sql    = "SELECT * FROM `stud_login`";
+    $sql    = "SELECT * FROM `students`";
     $retval = mysqli_query($conn, $sql);
 
     while($row = mysqli_fetch_array($retval)){
@@ -16,11 +17,26 @@
 
           header("location: dashb.html");
       }
+      else {
+        echo "Not correct";
+      }
     }
   }
 
   #USER REGISTER
   if(isset($_POST['btn_reg_submit'])){
+
+    #Send input login info for validation
+    #validate student id 
+    if(valid_stud_ID($_POST['str_reg_ID'])==TRUE){
+      $strID    = $_POST['str_reg_ID'];
+    }
+    if(valid_email(strtolower($_POST['str_reg_email']))==TRUE){
+      $strEmail = strtolower($_POST['str_reg_email']);  
+    }
+    
+  
+/*  
     $strID    = $_POST['str_reg_ID']; 
     $strEmail = strtolower($_POST['str_reg_email']);  
     $strName  = $_POST['str_reg_name'];    
@@ -28,11 +44,11 @@
 
     $strPassw1 = md5($_POST['str_reg_passw1']); #Password1
     $strPassw2 = md5($_POST['str_reg_passw2']); #Password2
-
+*/
     if ($strPassw1 == $strPassw2){
 
         #INSERT DATA INTO THE DB
-        $sql1 = "INSERT INTO `stud_login`(`stud_id`, `stud_email`, `stud_name`, `stud_field`, `passw1`, `passw2`) VALUES ('".$strID."','".$strEmail."','".$strName."','".$strStudyf."','".$strPassw1."','".$strPassw2."')";
+        $sql1 = "INSERT INTO `students`(`stud_id`, `stud_email`, `stud_name`, `stud_field`, `passw1`, `passw2`) VALUES ('".$strID."','".$strEmail."','".$strName."','".$strStudyf."','".$strPassw1."','".$strPassw2."')";
 
         $retval1 = mysqli_query($conn, $sql1);
 

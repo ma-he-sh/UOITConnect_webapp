@@ -485,3 +485,20 @@
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.dash-calender-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding-top: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    box-sizing: border-box;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2000;
+    background-color: white;
+}

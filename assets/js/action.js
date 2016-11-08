@@ -13,3 +13,7 @@ function display_new_card() {
   insertDIV.appendChild(creNode);
 
 }
+
+function displayDIV(divID){
+    document.getElementById(divID).style.display = '';
+}
