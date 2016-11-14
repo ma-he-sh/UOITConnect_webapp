@@ -2,7 +2,7 @@
 #Validate the inputs
 
 function valid_stud_ID($stud_id){
-	if(preg_match('/^\d{9}$/'), $stud_id) && strlen($stud_id) == 9{
+	if(preg_match('/^\d{9}$/', $stud_id)){
 		#check the student id for a numerical input
 		return TRUE;
 	}
