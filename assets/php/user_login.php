@@ -26,17 +26,7 @@
   #USER REGISTER
   if(isset($_POST['btn_reg_submit'])){
 
-    #Send input login info for validation
-    #validate student id 
-    if(valid_stud_ID($_POST['str_reg_ID'])==TRUE){
-      $strID    = $_POST['str_reg_ID'];
-    }
-    if(valid_email(strtolower($_POST['str_reg_email']))==TRUE){
-      $strEmail = strtolower($_POST['str_reg_email']);  
-    }
-    
-  
-/*  
+
     $strID    = $_POST['str_reg_ID']; 
     $strEmail = strtolower($_POST['str_reg_email']);  
     $strName  = $_POST['str_reg_name'];    
@@ -44,7 +34,27 @@
 
     $strPassw1 = md5($_POST['str_reg_passw1']); #Password1
     $strPassw2 = md5($_POST['str_reg_passw2']); #Password2
-*/
+
+
+    #Send input login info for validation
+    /*
+    function validation(){
+      if(valid_stud_ID($_POST['str_reg_ID']) && valid_email(strtolower($_POST['str_reg_email'])) && valid_stud_name($_POST['str_reg_name']) && valid_password($_POST['str_reg_passw1']) && valid_password($_POST['str_reg_passw2'])){
+        $strID    = $_POST['str_reg_ID']; 
+        $strEmail = strtolower($_POST['str_reg_email']);  
+        $strName  = $_POST['str_reg_name'];    
+        $strStudyf= $_POST['str_reg_studyf'];    
+
+        $strPassw1 = md5($_POST['str_reg_passw1']); #Password1
+        $strPassw2 = md5($_POST['str_reg_passw2']); #Password2
+        
+        return TRUE;
+      }
+      else{
+        return FALSE;
+      }
+    }*/
+
     if ($strPassw1 == $strPassw2){
 
         #INSERT DATA INTO THE DB

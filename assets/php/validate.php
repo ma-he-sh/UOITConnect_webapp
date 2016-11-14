@@ -9,7 +9,7 @@ function valid_stud_ID($stud_id){
 	return FALSE;
 }
 
-function valid_email(){
+function valid_email($email){
 	if (filter_var($email, FILTER_VALIDATE_EMAIL) && strlen($email) < 64)
     {
         return TRUE;
@@ -17,18 +17,14 @@ function valid_email(){
     return FALSE;
 }
 
-function valid_stud_name(){
+function valid_stud_name($stud_name){
   if(preg_match('/^(([A-Za-z]+)|\s{1}[A-Za-z]+)+$/', $stud_name)){
 		return TRUE;
 	}
 	return FALSE;
 }
 
-function valid_studyf(){
-
-}
-
-function valid_password(){
+function valid_password($password){
 	if (preg_match('/^[a-zA-Z0-9\`\~\!\@\#\$\%\^\&\*\(\)\-\_\=\+\|\<\>\?]{6,31}$/', $password))
   {
       return TRUE;
