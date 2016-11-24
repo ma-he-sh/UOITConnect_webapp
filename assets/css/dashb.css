@@ -359,7 +359,7 @@
 
 .dash-sch-insert-card {
   width: 100%;
-  height: 100px;
+  height: auto;
   float: left;
   background-color: white;
   margin-bottom: 6px;
@@ -471,9 +471,10 @@
   width: 50px;
   height: 50px;
   float: left;
-  background-color: aquamarine;
   line-height: 50px;
   text-align: center;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
 }
 
 .dash-sch-header-btn {
@@ -501,4 +502,71 @@
     left: 0;
     z-index: 2000;
     background-color: white;
+}
+
+.dash-sch-frnd-display-card {
+  width: 100%;
+  min-height: 100px;
+  height: auto;
+  display: flex;
+}
+
+.dash-sch-frnd-img {
+  width: 100px;
+  height: 100px;
+  float: left;
+  background-color: aquamarine;
+  position:relative;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.dash-sch-frnd-info-wrapper {
+  display: 1;
+  float: right;
+  width: 100%;
+  background-color: aqua;
+}
+
+.dash-sch-frnd-main-txt {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+  box-sizing: border-box;
+  line-height: 30px;
+  text-overflow: ellipsis;
+}
+
+.dash-sch-frnd-sec-txt {
+  width: 100%;
+  height: auto;
+  float: left;
+  font-size: 14px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dash-sch-frnd-addrem-block {
+  width: 100%;
+  height: 24px;
+  float: left;
+}
+
+.dash-sch-frnd-add {
+  width: 100px;
+  height: 24px;
+  float:left;
+  background-color: #2196f3;
+  border-style: none;
+}
+
+.dash-sch-frnd-remove {
+  width: 100px;
+  height: 24px;
+  float:left;
+  background-color: #e74c3c;
+  border-style: none;
 }
