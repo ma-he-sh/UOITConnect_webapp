@@ -475,6 +475,8 @@
   text-align: center;
   box-sizing: border-box;
   border-top: 1px solid #eee;
+  border-style: none;
+  background-color: transparent;
 }
 
 .dash-sch-header-btn {
