@@ -15,10 +15,10 @@
           $_SESSION['user_ID']   = $row['stud_id'];
           $_SESSION['user_name'] = $row['stud_name'];
 
-          header("location: dashb.html");
+          header("location: dashb.php");
       }
       else {
-        echo "Not correct";
+        $return_msg = error_msg('User Signin Error');
       }
     }
   }
