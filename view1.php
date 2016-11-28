@@ -6,6 +6,10 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
+<?php
+  include 'assets/php/dash.php';
+  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
+?>
 <style>
   table,
   th,
