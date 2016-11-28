@@ -37,7 +37,7 @@
       $crn      = $row1['crn'];
       $ctitle   = $row1['ctitle'];
       $ccode    = $row1['ccode'];
-      $location =$row1['location'];
+      $location = $row1['location'];
       $ctype    = $row1['ctype'];
       $proff    = $row1['professor'];
       

@@ -49,7 +49,7 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
           </div>
         </div>
       </a>
-      <a href="user_schedule.html">
+      <a href="user_schedule.php">
         <div class="dash-nav-card min-card">
           <div class="dash-card transition">
             <div class="dash-card-logo"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i></div>
@@ -79,7 +79,7 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view1.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
@@ -87,75 +87,75 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view2.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View2</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view3.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View3</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view4.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View4</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view5.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View5</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view6.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View6</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view7.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View7</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view8.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View8</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view9.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View9</div>
           </div>
         </div>
       </a>
-      <a href="#">
+      <a href="view10.php">
         <div class="dash-nav-card micro-card">
           <div class="dash-card-min transition">
             <div class="dash-card-logo-min"><i class="fa fa-connectdevelop fa-x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">View1</div>
+            <div class="dash-card-text">View10</div>
           </div>
         </div>
       </a>
