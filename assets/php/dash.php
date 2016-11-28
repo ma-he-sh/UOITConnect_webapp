@@ -104,7 +104,7 @@ function displayUser($strName, $strEmail, $strID, $strInfo){
 
 
 /*
-*Calender page action
+*Schedule Page
 */
 
 

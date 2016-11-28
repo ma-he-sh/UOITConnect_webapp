@@ -1,7 +1,7 @@
 @media (min-width: 300px) {
     .dash-nav-wrapper {
         width: 300px;
-        height: 1250px;
+        height: 1250px;/*1250*/
         top: 120px;
         right: 0;
         left: 0;
@@ -22,7 +22,7 @@
 @media (min-width: 400px) {
     .dash-nav-wrapper {
         width: 300px;
-        height: 1250px;
+        height: 1250px;/*1250*/
         top: 120px;
         bottom: 0;
         right: 0;
@@ -44,7 +44,7 @@
 @media (min-width: 550px) {
     .dash-nav-wrapper {
         width: 502px;
-        height: 602px;
+        height: 602px;/*602*/
         top: 120px;
         bottom: 0;
         right: 0;
@@ -66,7 +66,7 @@
 @media (min-width: 750px) {
     .dash-nav-wrapper {
         width: 700px;
-        height: 602px;
+        height: 602px;/*602*/
         top: 120px;
         bottom: 0;
         right: 0;
@@ -88,7 +88,7 @@
 @media (min-width: 1000px) {
     .dash-nav-wrapper {
         width: 700px;
-        height: 400px;
+        height: 600px;/*400*/
         top: 0;
         bottom: 0;
         right: 0;
@@ -108,7 +108,7 @@
 @media (min-width: 1200px) {
     .dash-nav-wrapper {
         width: 700px;
-        height: 400px;
+        height: 600px;/*400*/
         top: 0;
         bottom: 0;
         right: 0;
@@ -128,7 +128,7 @@
 @media (min-width: 1440px) {
     .dash-nav-wrapper {
         width: 700px;
-        height: 400px;
+        height: 600px;/*400*/
         top: 0;
         bottom: 0;
         right: 0;
@@ -238,8 +238,27 @@
     -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
 }
+.dash-card-min {
+    width: 100%;
+    height: 100%;
+    padding-top: 0px;
+    background-color: white;
+    box-sizing: border-box;
+    color: #4E585C;
+    border: 1px solid white;
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.25);
+}
 
 .dash-card:hover {
+    border: 1px solid rgba(33, 150, 243, 0.8);
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+.dash-card-min:hover {
     border: 1px solid rgba(33, 150, 243, 0.8);
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
@@ -583,4 +602,17 @@
 .dash-search-card-wrapper {
     float: left;
     height: auto;
+}
+
+.micro-card {
+  width: 100px;
+  height: 100px;
+}
+
+.dash-card-logo-min {
+    width: 40px;
+    height: 40px;
+    margin-left: 28px;
+    line-height: 40px;
+    text-align: center;
 }
