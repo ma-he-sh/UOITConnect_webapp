@@ -388,7 +388,7 @@
 }
 
 .dash-frnd-header:hover{
-  background-color: #eee;
+  background-color: rgba(33,150,243,0.5);
 }
 
 .dash-sch-insert-card {
@@ -456,6 +456,7 @@
     float: left;
     background-color: white;
     margin-bottom: 1px;
+    display: none;
 }
 
 .dash-sch-header-txt {
@@ -663,3 +664,21 @@
 }
 
 
+
+
+
+
+
+.dash-friends-wrapper {
+    width: 100%;
+    height: auto;
+    float: left;
+    display: none;
+}
+
+.dash-frnds-add-wrapper {
+    width: 100%;
+    height: auto;
+    float: left;
+    display: none;
+}

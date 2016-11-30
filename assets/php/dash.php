@@ -73,7 +73,7 @@ if(isset($_POST['submitUserADD'])){
 *Delete friend
 */
 $return_msg = '';
-if(isset($_POST['submitUser'])){
+if(isset($_POST['submitUserREM'])){
     $strDELID = $_POST['strPromptID'];
 
     $sql = "DELETE FROM friends 
@@ -89,6 +89,40 @@ if(isset($_POST['submitUser'])){
         $return_msg = good_msg('Friend Deleted');
     }
 }
+
+
+/*
+*Retrieve all the friends
+*/
+$return_frnds = '';
+$sql1 = "SELECT * 
+        FROM friends
+        WHERE stud_id = $userID
+        ORDER BY frnd_id"; 
+
+$retval = mysqli_query($conn, $sql1);
+
+$count = 0;
+if ($result=mysqli_query($conn,$sql1)){
+  $count=mysqli_num_rows($result);
+}
+if($count == 0){
+  #echo 'No result';
+  $return_frnds = 'NO results';
+}
+#Search for the query data  
+else{
+    while($row1 = mysqli_fetch_array($retval)){
+        if($row1['stud_id' == $userID]){
+            $strName = $row1['frnd_id'];
+            $strFID  = $row1['frnd_id'];
+            #print $strName;
+            $return_frnds .= displayUser($strName, '', $strFID, '');
+        }
+    }
+}
+
+
 
 #Display User data
 function displayUser($strName, $strEmail, $strID, $strInfo){
