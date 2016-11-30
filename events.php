@@ -6,10 +6,8 @@ $res=mysql_connect("localhost","root","");//connects to the server with our DB
 mysql_select_db("uoitconnect");//connects to the DB.'sampleDB' is the DB's name
 
  
-$res=mysql_connect("localhost","root","");
-mysql_select_db("schedulerDB");
- 
-$calendar = new schedulerConnector($res);//connector initialization
-$calendar->render_table("events","id","start_date","end_date","text");
+$conn = new schedulerConnector($res);//connector initialization
+
+$conn->render_table("events","id","start_date,end_date,text,prof,location,rec_type,event_pid,event_length");
 
 ?>

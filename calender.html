@@ -34,9 +34,30 @@
     <div class="dhx_cal_data"></div>  
         
         <script>
-         scheduler.init('scheduler_here', new Date(), "month");
-scheduler.load("events.php");
- 
+            scheduler.config.first_hour = 8;
+            scheduler.config.last_hour = 22;
+			scheduler.config.limit_time_select = true;
+            scheduler.config.readonly_form = true;
+            scheduler.config.select = false;
+            scheduler.config.repeat_date = "%m/%d/%Y";
+            scheduler.config.include_end_by = true;
+            scheduler.config.hour_size_px = 60;
+            
+            scheduler.attachEvent("onTemplatesReady", function(){
+    scheduler.templates.event_text=function(start,end,event){
+        return "<b>" + event.text + "</b><br><b>Location: </b><i>" + event.location + "</i><br><b>Professor: </b><i>"+ event.prof+"</i>";
+    }
+}); 
+            scheduler.templates.event_header = function(start,end,ev){
+    return scheduler.templates.event_date(start)+" - "+
+    scheduler.templates.event_date(end) +" - " + ev.location;
+};
+            
+            scheduler.config.xml_date="%Y-%m-%d %H:%i";
+         scheduler.init('scheduler_here', new Date(), "week");
+            scheduler.load("events.php");
+        var dp = new dataProcessor("events.php");
+            dp.init(scheduler);
         </script>
         
 </div>
