@@ -50,7 +50,7 @@
         </div>
       </div>
       <!--user course inputs-->
-      <form action="" method="post">
+      <form action="assets/php/addcourse.php" method="post">
         <div class="dash-sch-insert-card transition">
           <div class="dash-flex-input-container">
             <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id1">
@@ -121,27 +121,7 @@
         </div>
       </form>
       <div class="dash-course-add-wrap">
-        <?php
-        $messageCourse = ''; 
-        if(isset($_POST['courseSubmit'])){ 
-          $course1 = $_POST['course-id1']; 
-          $course2 = $_POST['course-id2']; 
-          $course3 = $_POST['course-id3']; 
-          $course4 = $_POST['course-id4']; 
-          $course5 = $_POST['course-id5']; 
-          $course6 = $_POST['course-id6']; 
-          $course7 = $_POST['course-id7']; 
-          $course8 = $_POST['course-id8']; 
-          $sql = "INSERT INTO stud_courseinfo(stud_id, crn) VALUES "; 
-          $courseID = ''; 
-          for($i = 1; $i<9; $i++){ 
-            $courseID='course-id' .$i; 
-            if($_POST[$courseID] !=NULL){ 
-              echo "$courseID"; 
-            } 
-            }
-          } 
-        ?>
+       
       </div>
 
   </body>

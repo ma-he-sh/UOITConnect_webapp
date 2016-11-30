@@ -14,6 +14,7 @@
 
           $_SESSION['user_ID']   = $row['stud_id'];
           $_SESSION['user_name'] = $row['stud_name'];
+          setcookie("uid", $row['stud_id'], time()+3600 , '/' );
 
           header("location: dashb.php");
       }
