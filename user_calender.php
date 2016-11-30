@@ -52,7 +52,9 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
-                    <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                     <a href="assets/php/sign_out.php">
+                        <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    </a>
                 </div>
             </div>
             <div class="dash-header-nav">
