@@ -65,3 +65,12 @@ function displayAddF() {
     document.getElementById('friends-wrapper').style.display = "none";
     localStorage.setItem("active-frnd-tab", 'frndsadd-wrapper');
 }
+
+//Exapand the more content
+function more(show) {
+    document.getElementById(show).style.display = "block";
+}
+
+function less(hide) {
+    document.getElementById(hide).style.display = "none";
+}

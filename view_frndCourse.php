@@ -63,24 +63,36 @@
                             
                             $retval = mysqli_query($conn, $sql);
                             
+                            
+                            $id = 0;
                             while($row=mysqli_fetch_array($retval))
                             {
                                 //Only display lecture
                                 if($row['ctype'] == 'Lecture'){
-                                    $display = displayCourse($row['crn'], $row['ctitle'], $row['ccode'],$row['section'],$row['location'], $row['stime'], $row['etime'],$row['day'], $row['ctype'],$row['professor']); 
+                                    $display = displayCourse($row['crn'], $row['ctitle'], $row['ccode'],$row['section'],$row['location'], $row['stime'], $row['etime'],$row['day'], $row['ctype'],$row['professor'], $id); 
                                     echo $display;
                                 }
+                                $id += 1;
                             }
                         }
                         else{
                             echo 'DOne';
                         }
-                        function displayCourse($strCRN, $strCTITLE, $strCCODE, $strSEC, $strLOC, $strSTIME, $strETIME, $strDAY, $strCTYPE, $strPROFF){
+                        function displayCourse($strCRN, $strCTITLE, $strCCODE, $strSEC, $strLOC, $strSTIME, $strETIME, $strDAY, $strCTYPE, $strPROFF, $id){
+                            $idshow = '"'.$id.'"';
                             $courseD = "<div class='dash-sch-insert-card transition'>
                                             <div class='dash-sch-course-display-card'>
                                                 <div class='dash-course-header'>$strCCODE : $strCTITLE</div>
                                                 <div class='dash-course-content full-card'>Professor: $strPROFF</div>
+                                            </div>
+                                            <div class='dash-course-more-btn transition' id='".$idshow."' onclick='more($idshow)'><i class='fa fa-sort-desc' aria-hidden='true'></i></div>
+                                            <div class='dash-course-more-info' id=".$idshow.">
                                                 <div class='dash-course-content full-card'>Location: $strLOC</div>
+                                                <div class='dash-course-content full-card'>Section : $strSEC</div>
+                                                <div class='dash-course-content full-card'>Date    : $strDAY</div>
+                                                <div class='dash-course-content half-card'>Start Time:  $strSTIME</div>
+                                                <div class='dash-course-content half-card'>End Time  :  $strETIME</div>
+                                                <div class='dash-course-less-btn transition' onclick='less($idshow)'><i class='fa fa-caret-up' aria-hidden='true'></i></div>
                                             </div>
                                         </div>";
                             return $courseD;
@@ -93,6 +105,13 @@
                             <div class='dash-course-content half-card'>Location</div>
                             <div class='dash-course-content half-card'>Location</div>
                             <div class='dash-course-content full-card'>Location</div>
+                        </div>
+                        <div class='dash-course-more-btn transition' id='' onclick='more("more2")'><i class='fa fa-sort-desc' aria-hidden='true'></i></div>
+                        <div class='dash-course-more-info' id="more2">
+                            <div class='dash-course-content half-card'>Location</div>
+                            <div class='dash-course-content half-card'>Location</div>
+                            <div class='dash-course-content full-card'>Location</div>
+                            <div class='dash-course-less-btn transition' onclick='less("more2")'><i class='fa fa-caret-up' aria-hidden='true'></i></div>
                         </div>
                     </div>-->
 
