@@ -5,7 +5,7 @@ $uid =  $_SESSION['user_ID'];
 
 //print_r $id;
 function getday($day){
-    $days = array("Monday"=>"1","Tuesday"=>"2","Wednesday"=>"3","Thursday"=>"4","Friday"=>"","Saturday"=>"6","0"=>"&nsbp");
+    $days = array("Monday"=>"1","Tuesday"=>"2","Wednesday"=>"3","Thursday"=>"4","Friday"=>"5","Saturday"=>"6","0"=>"&nsbp");
     return($days[$day]);    
 }
 
@@ -53,7 +53,7 @@ if(isset($_POST['courseSubmit'])){
                     
                 $sql2 = "REPLACE INTO `course_data`(`cid`, `crn`, `ctitle`, `ccode`, `section`, `week`, `stime`, `etime`, `day`, `location`, `sdate`, `edate`, `ctype`, `professor`) VALUES ('".$cid."','".$crn."','".$title."','".$ccode."','".$section."','".$week."','".$stime."','".$etime."','".$day."','".$location."','".$sdate."','".$edate."','".$ctype."','".$prof."')";
                     
-                $sql3 = "REPLACE INTO `events`(`start_date`, `end_date`, `text`, `prof`, `location`, `crn`, `rec_type`, `event_length`, `event_pid`) VALUES ('".$start."','".$end."','".$coursetitle."','".$prof."','".$location."','".$crn."','week_1___".$daynum."','".$sec."','".$num."')";
+                $sql3 = "REPLACE INTO `events`(`start_date`, `end_date`, `text`, `prof`, `location`, `crn`, `rec_type`, `event_length`, `event_pid`, `user`) VALUES ('".$start."','".$end."','".$coursetitle."','".$prof."','".$location."','".$crn."','week_1___".$daynum."','".$sec."','".$num."','".$uid."')";
                 
                 $retval2 = mysqli_query($conn, $sql2);
                 $retval3 = mysqli_query($conn, $sql3);

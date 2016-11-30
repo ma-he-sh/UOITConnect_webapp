@@ -44,7 +44,7 @@
         <div class="dash-user-sch-wrapper" id="insertDIV">
             <div class="dash-sch-wrapper">
                 <div class="dash-frnd-header" onclick="displayFrnds()"><i class="fa fa-users" aria-hidden="true"></i> Friends</div>
-                <div class="dash-frnd-header" onclick="displayAddF()"><i class="fa fa-user-plus" aria-hidden="true"></i> Add Friend</div>
+                <div class="dagsh-frnd-header" onclick="displayAddF()"><i class="fa fa-user-plus" aria-hidden="true"></i> Add Friend</div>
                 <div class="dash-frnd-search-wrapper" id="disp_frnd_search">
                     <form action="" method="post">
                         <div class="dash-flex-input-container">

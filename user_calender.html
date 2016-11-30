@@ -38,7 +38,7 @@
     </head>
     <?php
 include 'assets/php/dash.php';
- include 'assets/php/session.php';
+ include 'session.php';
 $uid = $_SESSION['user_ID'];
 if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
@@ -68,7 +68,7 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
                     <div class="dash-nav-txt-wrapper">Your Schedule</div>
                 </a>
                 <div class="dash-nav-seperator"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
-                <a href="user_calender.php">
+                <a href="user_calender.html">
                     <div class="dash-nav-txt-wrapper">Your Calender</div>
                 </a>
             </div>
@@ -138,7 +138,7 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
             
 		function close_form() {
 			scheduler.endLightbox(false, html("my_form"));
-		};
+		}
         
         </script>
     </body>

@@ -127,6 +127,7 @@
             <div class="dash-course-add-wrap">
 
             </div>
+        </div>
 
     </body>
     <script src="assets/js/action.js"></script>
