@@ -46,32 +46,55 @@
                 <div class="dash-sch-header">Course Info</div>
             </div>
 
-
-
+            <!--display frnd course informations-->
             <div class="dash-sch-card-holder">
-                <div class="dash-sch-insert-card transition">
-                    <div class="dash-search-card-wrapper">
-                        <?php 
+
+                <?php 
                         if($_GET){
-                            $frndID = $_GET['frndID'];
+                            $retriveID = $_GET['frndID'];
                             
-                            $sql = "SELECT * FROM stud_courseinfo INNER JOIN course_data WHERE stud_id = $frndID";
+                            #$sql = "SELECT * FROM stud_courseinfo INNER JOIN course_data WHERE stud_id = $retriveID";
+                            $sql = "SELECT *
+                                    FROM course_data AS CD
+                                    JOIN stud_courseinfo AS SC
+                                    WHERE SC.stud_id = $retriveID
+                                    AND SC.crn = CD.crn
+                                    ORDER BY CD.crn";
                             
                             $retval = mysqli_query($conn, $sql);
                             
                             while($row=mysqli_fetch_array($retval))
                             {
-                              echo $row['crn'];
-                              echo $row['ctitle'];
-                              echo "<br>";
+                                //Only display lecture
+                                if($row['ctype'] == 'Lecture'){
+                                    $display = displayCourse($row['crn'], $row['ctitle'], $row['ccode'],$row['section'],$row['location'], $row['stime'], $row['etime'],$row['day'], $row['ctype'],$row['professor']); 
+                                    echo $display;
+                                }
                             }
                         }
                         else{
                             echo 'DOne';
                         }
+                        function displayCourse($strCRN, $strCTITLE, $strCCODE, $strSEC, $strLOC, $strSTIME, $strETIME, $strDAY, $strCTYPE, $strPROFF){
+                            $courseD = "<div class='dash-sch-insert-card transition'>
+                                            <div class='dash-sch-course-display-card'>
+                                                <div class='dash-course-header'>$strCCODE : $strCTITLE</div>
+                                                <div class='dash-course-content full-card'>Professor: $strPROFF</div>
+                                                <div class='dash-course-content full-card'>Location: $strLOC</div>
+                                            </div>
+                                        </div>";
+                            return $courseD;
+                        }
                     ?>
-                    </div>
-                </div>
+                    <!--
+                    <div class='dash-sch-insert-card transition'>
+                        <div class='dash-sch-course-display-card'>
+                            <div class='dash-course-header'>Ccode : </div>
+                            <div class='dash-course-content half-card'>Location</div>
+                            <div class='dash-course-content half-card'>Location</div>
+                            <div class='dash-course-content full-card'>Location</div>
+                        </div>
+                    </div>-->
 
             </div>
         </div>

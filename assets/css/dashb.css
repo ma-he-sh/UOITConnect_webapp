@@ -548,6 +548,11 @@
     height: auto;
     display: flex;
 }
+.dash-course-display-card {
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+}
 
 .dash-sch-frnd-img {
     width: 80px;
@@ -705,4 +710,31 @@
     height: 50px;
     float: left;
     background-color: white;
+}
+
+.dash-course-header {
+    width: 100%;
+    height: auto;
+    float: left;
+    font-size: 24px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    line-height: 30px;
+    text-overflow: ellipsis;
+}
+
+.dash-course-content {
+    height: 30px;
+    float: left;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.half-card {
+    width: 50%;
+}
+
+.full-card {
+    width: 100%;
 }
