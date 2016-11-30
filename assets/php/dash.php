@@ -96,9 +96,10 @@ if(isset($_POST['submitUserREM'])){
 $return_msg = '';
 if(isset($_POST['CourseData'])){
     $strCID = $_POST['strPromptID'];
+    $strFNAME = $_POST['strHIDNAME'];
     #send the link
     $return_msg = good_msg('Done');
-    header("location: view_frndCourse.php?frndID=$strCID");
+    header("location: view_frndCourse.php?frndID=$strCID&frndName=$strFNAME");
 }
 
 
@@ -106,16 +107,17 @@ if(isset($_POST['CourseData'])){
 *Retrieve all the friends
 */
 $return_frnds = '';
-$sql1 = "SELECT * 
+/*$sql1 = "SELECT * 
         FROM friends AS F
         WHERE F.stud_id = $userID
-        ORDER BY frnd_id";
+        ORDER BY frnd_id";*/
 
-/*$sql1 = "SELECT F.frnd_id, S.stud_name, S.stud_field
-        FROM friends
-        INNER JOIN students
-        ON friends.frnd_id = students.stud_id
-        WHERE friends.stud_id = $userID AND friends.frnd_is = students.stud_id"; */
+$sql1 = "SELECT students.stud_id, students.stud_email, students.stud_name, students.stud_field
+        FROM  students
+        INNER JOIN friends
+              ON friends.frnd_id = students.stud_id
+        WHERE friends.stud_id = $userID"; 
+
 
 $retval = mysqli_query($conn, $sql1);
 
@@ -130,10 +132,12 @@ if($count == 0){
 #Search for the query data  
 else{
     while($row1 = mysqli_fetch_array($retval, MYSQLI_ASSOC)){
-        $strName = $row1['frnd_id'];
-        $strFID  = $row1['frnd_id'];
+        $strName = $row1['stud_name'];
+        $strFID  = $row1['stud_id'];
+        $strInfo = $row1['stud_field'];
+        $strEmail= $row1['stud_email'];
         #print $strName;
-        $return_frnds .= displayUser($strName, '', $strFID, '', 0, 1);
+        $return_frnds .= displayUser($strName, $strEmail, $strFID, $strInfo, 0, 1);
     }
 }
 
@@ -150,8 +154,9 @@ else{
 #Display User data
 function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displayREM){
     $data = "<div class='dash-sch-insert-card transition'><div class='dash-sch-frnd-display-card'><div class='dash-sch-frnd-img'></div>
-    <div class='dash-sch-frnd-info-wrapper'><div class='dash-sch-frnd-main-txt'>".$strName."</div><div class='dash-sch-frnd-sec-txt'>".$strInfo."</div></div></div>
+    <div class='dash-sch-frnd-info-wrapper'><div class='dash-sch-frnd-main-txt'>".$strName."</div><div class='dash-sch-frnd-sec-txt'>".$strInfo."</div><div class='dash-sch-frnd-sec-txt'>".$strEmail."</div></div></div>
     <div class='dash-sch-frnd-addrem-block'><form action='' method='post'><input type='hidden' name='strPromptID' value='".$strID."'/>
+    <input type='hidden' name='strHIDNAME' value='".$strName."'/>
     <button type='submit' name='CourseData' class='dash-sch-frnd-course'>Course Info</button>";
     
     if($displayADD == 1){

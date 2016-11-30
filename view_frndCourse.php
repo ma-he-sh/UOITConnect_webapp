@@ -37,13 +37,20 @@
                 <a href="user_addfrnd.php">
                     <div class="dash-nav-txt-wrapper">Friends</div>
                 </a>
+                <div class="dash-nav-seperator">
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+                <a href="<?php $_GET['frndID']; ?>">
+                    <div class="dash-nav-txt-wrapper">Course Info</div>
+                </a>
             </div>
         </div>
 
         <!--content-->
         <div class="dash-user-sch-wrapper" id="insertDIV">
             <div class="dash-sch-wrapper">
-                <div class="dash-sch-header">Course Info</div>
+                <div class="dash-sch-header">
+                    <?php echo $_GET['frndName'].'\'s'; ?> Courses</div>
             </div>
 
             <!--display frnd course informations-->
@@ -53,7 +60,6 @@
                         if($_GET){
                             $retriveID = $_GET['frndID'];
                             
-                            #$sql = "SELECT * FROM stud_courseinfo INNER JOIN course_data WHERE stud_id = $retriveID";
                             $sql = "SELECT *
                                     FROM course_data AS CD
                                     JOIN stud_courseinfo AS SC
@@ -62,7 +68,6 @@
                                     ORDER BY CD.crn";
                             
                             $retval = mysqli_query($conn, $sql);
-                            
                             
                             $id = 0;
                             while($row=mysqli_fetch_array($retval))
@@ -75,9 +80,7 @@
                                 $id += 1;
                             }
                         }
-                        else{
-                            echo 'DOne';
-                        }
+                
                         function displayCourse($strCRN, $strCTITLE, $strCCODE, $strSEC, $strLOC, $strSTIME, $strETIME, $strDAY, $strCTYPE, $strPROFF, $id){
                             $idshow = '"'.$id.'"';
                             $courseD = "<div class='dash-sch-insert-card transition'>
