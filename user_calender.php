@@ -11,17 +11,18 @@
     <script src="assets/js/codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript"></script>
 
     <style type="text/css" media="screen">
-    html, body{
-        margin:0px;
-        padding:0px;
-        height:100%;
-        overflow:hidden;
-    }   
-</style>
+        html,
+        body {
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            overflow: hidden;
+        }
+    </style>
 </head>
 <?php
 include 'assets/php/dash.php';
-  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
+  #if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
 
     <body>
@@ -33,7 +34,9 @@ include 'assets/php/dash.php';
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
-                    <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    <a href="assets/php/sign_out.php">
+                        <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    </a>
                 </div>
             </div>
             <div class="dash-header-nav">
@@ -45,7 +48,7 @@ include 'assets/php/dash.php';
                     <div class="dash-nav-txt-wrapper">Your Schedule</div>
                 </a>
                 <div class="dash-nav-seperator"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
-                <a href="user_calender.html">
+                <a href="user_calender.php">
                     <div class="dash-nav-txt-wrapper">Your Calender</div>
                 </a>
             </div>
@@ -69,39 +72,37 @@ include 'assets/php/dash.php';
         <script>
             scheduler.config.first_hour = 8;
             scheduler.config.last_hour = 22;
-			scheduler.config.limit_time_select = true;
+            scheduler.config.limit_time_select = true;
             scheduler.config.readonly_form = true;
             scheduler.config.select = false;
             scheduler.config.repeat_date = "%m/%d/%Y";
             scheduler.config.include_end_by = true;
             scheduler.config.hour_size_px = 60;
             scheduler.config.hour_date = "%h:%i %A";
-            
-            scheduler.attachEvent("onTemplatesReady", function(){
-    scheduler.templates.event_text=function(start,end,event){
-        return "<b>" + event.text + "</b><br><b>Location: </b><i>" + event.location + "</i><br><b>Professor: </b><i>"+ event.prof+"</i>";
-    }
-}); 
-                        scheduler.ignore_month = function(date){
-    if (date.getDay() == 6 || date.getDay() == 0) //hides Saturdays and Sundays
-        return true;
-};
-            scheduler.ignore_week = function(date){
-    if (date.getDay() == 6 || date.getDay() == 0) //hides Saturdays and Sundays
-        return true;
-};
-            scheduler.templates.event_header = function(start,end,ev){
-    return scheduler.templates.event_date(start)+" - "+
-    scheduler.templates.event_date(end) +" - " + ev.location;
-};
-            
-            scheduler.config.xml_date="%Y-%m-%d %h:%i";
-         scheduler.init('scheduler_here', new Date(), "week");
-            scheduler.load("events.php");
-        var dp = new dataProcessor("events.php");
-            dp.init(scheduler);
-        
 
+            scheduler.attachEvent("onTemplatesReady", function () {
+                scheduler.templates.event_text = function (start, end, event) {
+                    return "<b>" + event.text + "</b><br><b>Location: </b><i>" + event.location + "</i><br><b>Professor: </b><i>" + event.prof + "</i>";
+                }
+            });
+            scheduler.ignore_month = function (date) {
+                if (date.getDay() == 6 || date.getDay() == 0) //hides Saturdays and Sundays
+                    return true;
+            };
+            scheduler.ignore_week = function (date) {
+                if (date.getDay() == 6 || date.getDay() == 0) //hides Saturdays and Sundays
+                    return true;
+            };
+            scheduler.templates.event_header = function (start, end, ev) {
+                return scheduler.templates.event_date(start) + " - " +
+                    scheduler.templates.event_date(end) + " - " + ev.location;
+            };
+
+            scheduler.config.xml_date = "%Y-%m-%d %h:%i";
+            scheduler.init('scheduler_here', new Date(), "week");
+            scheduler.load("events.php");
+            var dp = new dataProcessor("events.php");
+            dp.init(scheduler);
         </script>
     </body>
     <script src="assets/js/action.js"></script>

@@ -22,7 +22,9 @@
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
-                    <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    <a href="assets/php/sign_out.php">
+                        <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    </a>
                 </div>
             </div>
             <div class="dash-header-nav">
@@ -44,7 +46,7 @@
                     <div class="dash-sch-header-txt season-btn transition">Fall</div>
                     <div class="dash-sch-header-txt season-btn transition">Winter</div>
                     <div class="dash-sch-header-txt season-btn transition">Summer</div>
-                    <a href="user_calender.html">
+                    <a href="user_calender.php">
                         <div class="dash-sch-header-btn season-btn transition" onclick="">View Your Calender <i class="fa fa-calendar" aria-hidden="true"></i></div>
                     </a>
                 </div>
