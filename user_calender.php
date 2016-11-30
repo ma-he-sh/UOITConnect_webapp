@@ -1,28 +1,46 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <title>Dashboard</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/js/codebase/dhtmlxscheduler.css" type="text/css">
+        <script src="assets/js/codebase/dhtmlxscheduler.js" type="text/javascript"></script>
+        <script src="assets/js/codebase/ext/dhtmlxscheduler_readonly.js" type="text/javascript"></script>
+        <script src="assets/js/codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript"></script>
+    <script src="assets/js/action.js"></script>
+        
+        <style type="text/css" media="screen">
+            html, body{
+                margin:0px;
+                padding:0px;
+                height:100%;
+                overflow:hidden;
+            }   
+            #my_form {
+			position: absolute;
+			top: 100px;
+			left: 200px;
+			z-index: 10001;
+			display: none;
+			background-color: white;
+			border: 2px outset gray;
+			padding: 20px;
+			font-family: Tahoma;
+			font-size: 10pt;
+		}
 
-<head>
-    <title>Dashboard</title>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/js/codebase/dhtmlxscheduler.css" type="text/css">
-    <script src="assets/js/codebase/dhtmlxscheduler.js" type="text/javascript"></script>
-    <script src="assets/js/codebase/ext/dhtmlxscheduler_readonly.js" type="text/javascript"></script>
-    <script src="assets/js/codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript"></script>
+		#my_form label {
+			width: 200px;
+		}
 
-    <style type="text/css" media="screen">
-        html,
-        body {
-            margin: 0px;
-            padding: 0px;
-            height: 100%;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<?php
+        </style>
+    </head>
+    <?php
 include 'assets/php/dash.php';
-  #if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
+ include 'assets/php/session.php';
+$uid = $_SESSION['user_ID'];
+if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
 
     <body>
@@ -34,12 +52,14 @@ include 'assets/php/dash.php';
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
-                    <a href="assets/php/sign_out.php">
-                        <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
-                    </a>
+                    <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
                 </div>
             </div>
             <div class="dash-header-nav">
+                            <div id="my_form">
+    <div id="courseinfo"> Course Info: <span id="course"></span> </div>
+    <div id="friends"> </div>
+    <input type="button" name="close" value="Close" id="close" style='width:100px;' onclick="close_form()"> </div>
                 <a href="dashb.php">
                     <div class="dash-nav-btn"> <i class="fa fa-th-large" aria-hidden="true"></i> </div>
                 </a>
@@ -55,6 +75,7 @@ include 'assets/php/dash.php';
         </div>
         <!-- calender codes-->
         <div class="dash-calender-wrapper">
+
             <div id="scheduler_here" class="dhx_cal_container" style='width:100%; height:100%;'>
                 <div class="dhx_cal_navline">
                     <div class="dhx_cal_prev_button">&nbsp;</div>
@@ -78,8 +99,10 @@ include 'assets/php/dash.php';
             scheduler.config.repeat_date = "%m/%d/%Y";
             scheduler.config.include_end_by = true;
             scheduler.config.hour_size_px = 60;
+            scheduler.config.drag_resize= false;
+            scheduler.config.dblclick_create = false;   
+            
             scheduler.config.hour_date = "%h:%i %A";
-
             scheduler.attachEvent("onTemplatesReady", function () {
                 scheduler.templates.event_text = function (start, end, event) {
                     return "<b>" + event.text + "</b><br><b>Location: </b><i>" + event.location + "</i><br><b>Professor: </b><i>" + event.prof + "</i>";
@@ -94,17 +117,31 @@ include 'assets/php/dash.php';
                     return true;
             };
             scheduler.templates.event_header = function (start, end, ev) {
-                return scheduler.templates.event_date(start) + " - " +
-                    scheduler.templates.event_date(end) + " - " + ev.location;
+                return scheduler.templates.event_date(start) + " - " + scheduler.templates.event_date(end) + " - " + ev.crn;
             };
-
             scheduler.config.xml_date = "%Y-%m-%d %h:%i";
             scheduler.init('scheduler_here', new Date(), "week");
             scheduler.load("events.php");
             var dp = new dataProcessor("events.php");
             dp.init(scheduler);
+            
+            //var html = function(scheduler_here) { return document.getElementById(id); }; //just a helper
+
+		var html = function(id) { return document.getElementById(id); }; //just a helper
+
+		scheduler.showLightbox = function(id) {
+			var ev = scheduler.getEvent(id);
+			scheduler.startLightbox(id, html("my_form"));
+            
+            document.getElementById("course").textContent="newtext";
+		};
+            
+		function close_form() {
+			scheduler.endLightbox(false, html("my_form"));
+		};
+        
         </script>
     </body>
-    <script src="assets/js/action.js"></script>
+
 
 </html>
