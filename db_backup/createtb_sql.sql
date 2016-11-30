@@ -1,0 +1,47 @@
+
+CREATE TABLE STUDENTS(
+  stud_id INT(11) NOT NULL,
+  stud_email VARCHAR(320) NOT NULL,
+  stud_name VARCHAR(320) NOT NULL,
+  stud_field VARCHAR(320) NOT NULL,
+  stud_verify INT DEFAULT 0,
+  passw1 VARCHAR(200) NOT NULL,
+  passw2 VARCHAR(200) NOT NULL,
+  PRIMARY KEY (stud_id)
+);
+
+CREATE TABLE FRIENDS(
+  stud_id INT(11) NOT NULL,
+  frnd_id INT(11) NOT NULL,
+  PRIMARY KEY (stud_id, frnd_id),
+  FOREIGN KEY (stud_id) REFERENCES STUDENTS(stud_id) ON DELETE CASCADE,
+  FOREIGN KEY (frnd_id) REFERENCES STUDENTS(stud_id) ON DELETE CASCADE
+);
+
+CREATE TABLE COURSE_DATA(
+  cid INT(11) NOT NULL,
+  crn INT(11) NOT NULL,
+  ctitle VARCHAR(225) NOT NULL,
+  ccode VARCHAR(225) NOT NULL,
+  section INT(11) NOT NULL,
+  week VARCHAR(225) NOT NULL,
+  stime TIME NOT NULL,
+  etime TIME NOT NULL,
+  day VARCHAR(225) NOT NULL,
+  location VARCHAR(225) NOT NULL,
+  sdate date NOT NULL,
+  edate date NOT NULL,
+  ctype VARCHAR(225) NOT NULL,
+  professor VARCHAR(225) NOT NULL,
+  PRIMARY KEY (cid, crn)
+);
+
+CREATE TABLE STUD_COURSEINFO(
+  stud_id INT(11) NOT NULL,
+  crn CHAR(11) NOT NULL,
+  PRIMARY KEY (stud_id, crn),
+  FOREIGN KEY (stud_id) REFERENCES STUDENTS(stud_id) ON DELETE CASCADE,
+  FOREIGN KEY (crn) REFERENCES COURSE_DATA(crn)
+);
+
+
