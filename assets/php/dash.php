@@ -43,7 +43,7 @@ if(isset($_POST['strSearchSubmit']) && $_POST['strSearchUser'] != ''){
 
                 $strInfo = 'Field: '.$strField;
                 
-                $SearchFrndResult .= displayUser($strName, $strEmail, $strID, $strInfo);
+                $SearchFrndResult .= displayUser($strName, $strEmail, $strID, $strInfo, 1, 0);
             }
         }
     }
@@ -90,15 +90,32 @@ if(isset($_POST['submitUserREM'])){
     }
 }
 
+/*
+*Course data retreive from friend
+*/
+$return_msg = '';
+if(isset($_POST['CourseData'])){
+    $strCID = $_POST['strPromptID'];
+    #send the link
+    $return_msg = good_msg('Done');
+    header("location: view_frndCourse.php?frndID=$strCID");
+}
+
 
 /*
 *Retrieve all the friends
 */
 $return_frnds = '';
 $sql1 = "SELECT * 
+        FROM friends AS F
+        WHERE F.stud_id = $userID
+        ORDER BY frnd_id";
+
+/*$sql1 = "SELECT F.frnd_id, S.stud_name, S.stud_field
         FROM friends
-        WHERE stud_id = $userID
-        ORDER BY frnd_id"; 
+        INNER JOIN students
+        ON friends.frnd_id = students.stud_id
+        WHERE friends.stud_id = $userID AND friends.frnd_is = students.stud_id"; */
 
 $retval = mysqli_query($conn, $sql1);
 
@@ -112,36 +129,44 @@ if($count == 0){
 }
 #Search for the query data  
 else{
-    while($row1 = mysqli_fetch_array($retval)){
-        if($row1['stud_id' == $userID]){
-            $strName = $row1['frnd_id'];
-            $strFID  = $row1['frnd_id'];
-            #print $strName;
-            $return_frnds .= displayUser($strName, '', $strFID, '');
-        }
+    while($row1 = mysqli_fetch_array($retval, MYSQLI_ASSOC)){
+        $strName = $row1['frnd_id'];
+        $strFID  = $row1['frnd_id'];
+        #print $strName;
+        $return_frnds .= displayUser($strName, '', $strFID, '', 0, 1);
     }
 }
 
 
 
+
+/*if($row1['stud_id' == $userID]){
+            $strName = $row1['frnd_id'];
+            $strFID  = $row1['frnd_id'];
+            #print $strName;
+            $return_frnds .= displayUser($strName, '', $strFID, '');
+        }*/
+
 #Display User data
-function displayUser($strName, $strEmail, $strID, $strInfo){
+function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displayREM){
     $data = "<div class='dash-sch-insert-card transition'><div class='dash-sch-frnd-display-card'><div class='dash-sch-frnd-img'></div>
     <div class='dash-sch-frnd-info-wrapper'><div class='dash-sch-frnd-main-txt'>".$strName."</div><div class='dash-sch-frnd-sec-txt'>".$strInfo."</div></div></div>
     <div class='dash-sch-frnd-addrem-block'><form action='' method='post'><input type='hidden' name='strPromptID' value='".$strID."'/>
-    <button type='submit' name='submitUserADD' class='dash-sch-frnd-add'><i class='fa fa-plus' aria-hidden='true'>
-    </i> ADD</button><button type='submit' name='submitUserREM' class='dash-sch-frnd-remove'><i class='fa fa-times' aria-hidden='true'></i> REMOVE</button>
-    </form></div></div>";
+    <button type='submit' name='CourseData' class='dash-sch-frnd-course'>Course Info</button>";
+    
+    if($displayADD == 1){
+        $data .= "<button type='submit' name='submitUserADD' class='dash-sch-frnd-add'><i class='fa fa-plus' aria-hidden='true'>
+    </i> ADD</button>";
+    }
+        
+    if($displayREM == 1){
+        $data .= "<button type='submit' name='submitUserREM' class='dash-sch-frnd-remove'><i class='fa fa-times' aria-hidden='true'></i> REMOVE</button>";
+    }
+    
+    $data .= "</form></div></div>";
+    
     return $data;
 }
-
-
-
-
-/*
-*Schedule Page
-*/
-
 
 
 
