@@ -10,7 +10,6 @@
 </head>
 <?php
   include 'assets/php/dash.php';
-  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
 
   <body>
@@ -121,7 +120,7 @@
         </div>
       </form>
       <div class="dash-course-add-wrap">
-       
+
       </div>
 
   </body>

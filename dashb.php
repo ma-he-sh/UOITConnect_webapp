@@ -45,7 +45,7 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
         <div class="dash-nav-card min-card">
           <div class="dash-card transition">
             <div class="dash-card-logo"><i class="fa fa-user-plus fa-3x" aria-hidden="true"></i></div>
-            <div class="dash-card-text">Add Friends</div>
+            <div class="dash-card-text">Friends</div>
           </div>
         </div>
       </a>

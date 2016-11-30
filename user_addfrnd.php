@@ -9,7 +9,7 @@
 
 <?php
   include 'assets/php/dash.php';
-  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
+  #if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
 
     <body>
@@ -36,7 +36,7 @@
                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                 </div>
                 <a href="user_addfrnd.php">
-                    <div class="dash-nav-txt-wrapper">Add Friends</div>
+                    <div class="dash-nav-txt-wrapper">Friends</div>
                 </a>
             </div>
         </div>
@@ -44,7 +44,8 @@
         <!--content-->
         <div class="dash-user-sch-wrapper" id="insertDIV">
             <div class="dash-sch-wrapper">
-                <div class="dash-sch-header">Add Friend</div>
+                <div class="dash-frnd-header">Friend</div>
+                <div class="dash-frnd-header">Add Friend</div>
                 <div class="dash-sch-term-wrapper">
                     <form action="" method="post">
                         <div class="dash-flex-input-container">
