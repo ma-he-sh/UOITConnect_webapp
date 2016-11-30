@@ -51,19 +51,19 @@ include 'assets/php/dash.php';
             <a href="user_schedule.php">
                 <div class="dash-nav-card min-card">
                     <div class="dash-card transition">
-                        <div class="dash-card-logo"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i></div>
+                        <div class="dash-card-logo"><i class="fa fa-book fa-3x" aria-hidden="true"></i></div>
 
-                        <div class="dash-card-text">Your Schedule</div>
+                        <div class="dash-card-text">Courses</div>
 
                     </div>
                 </div>
             </a>
-            <a href="user_settings.html">
+            <a href="user_calender.php">
                 <div class="dash-nav-card min-card">
                     <div class="dash-card transition">
-                        <div class="dash-card-logo"><i class="fa fa-sliders fa-3x" aria-hidden="true"></i></div>
+                        <div class="dash-card-logo"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i></div>
 
-                        <div class="dash-card-text">Settings</div>
+                        <div class="dash-card-text">View Calendar</div>
 
                     </div>
                 </div>
