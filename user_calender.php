@@ -8,8 +8,8 @@
         <script src="assets/js/codebase/dhtmlxscheduler.js" type="text/javascript"></script>
         <script src="assets/js/codebase/ext/dhtmlxscheduler_readonly.js" type="text/javascript"></script>
         <script src="assets/js/codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript"></script>
-    <script src="assets/js/action.js"></script>
-        
+        <script src="assets/js/action.js"></script>
+
         <style type="text/css" media="screen">
             html, body{
                 margin:0px;
@@ -17,36 +17,22 @@
                 height:100%;
                 overflow:hidden;
             }   
-            #my_form {
-			position: absolute;
-			top: 100px;
-			left: 200px;
-			z-index: 10001;
-			display: none;
-			background-color: white;
-			border: 2px outset gray;
-			padding: 20px;
-			font-family: Tahoma;
-			font-size: 10pt;
-		}
-
-		#my_form label {
-			width: 200px;
-		}
-
         </style>
     </head>
     <?php
-include 'assets/php/dash.php';
- include 'assets/php/session.php';
-$uid = $_SESSION['user_ID'];
-if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
-?>
+    include 'assets/php/dash.php';
+    include 'assets/php/session.php';
+    $uid = $_SESSION['user_ID'];
+    if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
+    ?>
 
     <body>
+        
         <!--header-->
         <div class="dash-header-container">
+            
             <div class="dash-header">
+                
                 <div class="dash-user-container">
                     <div class="dash-user-img-id"></div>
                     <div class="dash-user-name-txt">
@@ -56,10 +42,21 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
                 </div>
             </div>
             <div class="dash-header-nav">
-                            <div id="my_form">
-    <div id="courseinfo"> Course Info: <span id="course"></span> </div>
-    <div id="friends"> </div>
-    <input type="button" name="close" value="Close" id="close" style='width:100px;' onclick="close_form()"> </div>
+                
+                <div id="dash-user-pop-box">
+                    <div class="dash-header-for-box">
+                        BOX Header
+                    </div>
+                    <div class="input-wrapper-for-box">
+                        <label for="one">One:</label>
+                        <input name="one" class="input-for-box" placeholder="Enter Something" type="text"/>
+                    </div>
+                    <div class="input-wrapper-for-box">
+                        <label for="one">One:</label>
+                        <input name="one" class="input-for-box" placeholder="Enter Something" type="text"/>
+                    </div>
+                    <input type="button" name="close" value="Close" id="close" style='width:100px;' onclick="close_form()"> </div>
+                
                 <a href="dashb.php">
                     <div class="dash-nav-btn"> <i class="fa fa-th-large" aria-hidden="true"></i> </div>
                 </a>
@@ -101,7 +98,7 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
             scheduler.config.hour_size_px = 60;
             scheduler.config.drag_resize= false;
             scheduler.config.dblclick_create = false;   
-            
+
             scheduler.config.hour_date = "%h:%i %A";
             scheduler.attachEvent("onTemplatesReady", function () {
                 scheduler.templates.event_text = function (start, end, event) {
@@ -124,22 +121,22 @@ if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
             scheduler.load("events.php");
             var dp = new dataProcessor("events.php");
             dp.init(scheduler);
-            
+
             //var html = function(scheduler_here) { return document.getElementById(id); }; //just a helper
 
-		var html = function(id) { return document.getElementById(id); }; //just a helper
+            var html = function(id) { return document.getElementById(id); }; //just a helper
 
-		scheduler.showLightbox = function(id) {
-			var ev = scheduler.getEvent(id);
-			scheduler.startLightbox(id, html("my_form"));
-            
-            document.getElementById("course").textContent="newtext";
-		};
-            
-		function close_form() {
-			scheduler.endLightbox(false, html("my_form"));
-		};
-        
+            scheduler.showLightbox = function(id) {
+                var ev = scheduler.getEvent(id);
+                scheduler.startLightbox(id, html("dash-user-pop-box"));
+
+                document.getElementById("course").textContent="newtext";
+            };
+
+            function close_form() {
+                scheduler.endLightbox(false, html("dash-user-pop-box"));
+            };
+
         </script>
     </body>
 
