@@ -7,6 +7,8 @@
         <link rel="stylesheet" href="assets/js/codebase/dhtmlxscheduler.css" type="text/css">
         <script src="assets/js/codebase/dhtmlxscheduler.js" type="text/javascript"></script>
         <script src="assets/js/codebase/ext/dhtmlxscheduler_readonly.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript"></script>
+        
         <script src="assets/js/codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript"></script>
         <script src="assets/js/action.js"></script>
     </head>
@@ -24,7 +26,7 @@
             <div class="dash-header">
 
                 <div class="dash-user-container">
-                    <div class="dash-user-img-id"><?php echo $imageID; ?></div>
+                    <div class="dash-user-img-id"></div>
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
@@ -39,6 +41,7 @@
                     <div class="dash-header-for-box">
 
                     </div>
+                    <span class = "title"><b>Your friends registered in this course</b><br></span>
                     <div class="input-wrapper-for-box">
 
                     </div>
@@ -110,8 +113,6 @@
             var dp = new dataProcessor("events.php");
             dp.init(scheduler);
 
-            //var html = function(scheduler_here) { return document.getElementById(id); }; //just a helper
-
             var html = function(id) { return document.getElementById(id); }; //just a helper
 
             scheduler.showLightbox = function(id) {
@@ -132,33 +133,21 @@
             };
             
             function getdata (crn){
-            //url: "assets/php/frienddata.php",
-           // success: function( result ) {
-            return crn
-             //  }
+                var result="";
+                $.ajax({ 
+                  type: 'POST', 
+                  url: "assets/php/frienddata.php?crn="+crn, 
+                  async: false,  
+                  success:function(data) {
+                     result = data; 
+                  }
+                }); 
+     
+            return result
+
             };
 
         </script>
-        
-/*
-       
-            function getdata($crn){
-                $uid = $_SESSION['user_ID'];
-                $sql = "SELECT stud_name FROM students WHERE stud_id = ANY (SELECT f.frnd_id FROM `friends` AS f INNER JOIN stud_courseinfo AS s ON f.frnd_id = s.stud_id WHERE f.stud_id ='".$uid."' AND crn = '".$crn."')";
-                
-                $conn   = mysqli_connect("localhost","root","","uoitconnect") or die(db_conn_error());
-                $retval = mysqli_query($conn, $sql);
-                
-                $display;
-                
-                while($row=mysqli_fetch_array($retval))
-                            {
-                                    $display = $row['stud_name']; 
-                            }
-                
-                return $display;
-        }*/
-
 
     </body>
 
