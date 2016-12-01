@@ -56,76 +56,25 @@
                 <form action="assets/php/addcourse.php" method="post">
                     <div class="dash-sch-insert-card transition">
                         <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id1">
+                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id">
                         </div>
                         <div class="dash-sch-header-wrapper">
                             <green-txt>Course submitted successfully</green-txt>
                         </div>
                     </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id2">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id3">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id4">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id5">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id6">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id7">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-                    <div class="dash-sch-insert-card transition">
-                        <div class="dash-flex-input-container">
-                            <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id8">
-                        </div>
-                        <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
-                        </div>
-                    </div>
-
                     <div class="dash-course-add-wrap">
                         <button type="submit" name="courseSubmit" class="dash-submit-btn-wrap transition">SUBMIT</button>
                     </div>
                 </form>
             </div>
             <div class="dash-course-add-wrap">
+                    <?php
 
+                        #sql2 = "SELECT *
+                                #FROM   ";
+
+
+                    ?>
             </div>
 
     </body>
