@@ -35,7 +35,7 @@ include 'assets/php/dash.php';
             <div class="about-text">Stay connected with your friends</div>
             <div class="about-text"><br></div>
             <div class="about-text">Designed BY</div>
-            <div class="about-text">DRAJIV - MAHESH - ZHIHAN - MAAZ</div>
+            <div class="about-text">RAJIV - MAHESH - ZHIHAN - MAAZ</div>
             <div class="about-text"><br></div>
           <div class="about-text"><a href="https://github.com/Mahesh-Ranaweera/SOFE3700project"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a></div>
         </div>
