@@ -9,54 +9,42 @@
         <script src="assets/js/codebase/ext/dhtmlxscheduler_readonly.js" type="text/javascript"></script>
         <script src="assets/js/codebase/ext/dhtmlxscheduler_recurring.js" type="text/javascript"></script>
         <script src="assets/js/action.js"></script>
-
-        <style type="text/css" media="screen">
-            html, body{
-                margin:0px;
-                padding:0px;
-                height:100%;
-                overflow:hidden;
-            }   
-        </style>
     </head>
     <?php
     include 'assets/php/dash.php';
     include 'assets/php/session.php';
-    $uid = $_SESSION['user_ID'];
+        include 'assets/php/db.php';
     if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
     ?>
-
     <body>
-        
+
         <!--header-->
         <div class="dash-header-container">
-            
+
             <div class="dash-header">
-                
+
                 <div class="dash-user-container">
                     <div class="dash-user-img-id"></div>
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
-                    <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    <a href="assets/php/sign_out.php">
+                        <div class="dash-user-signout red-color"><i class="fa fa-sign-out" aria-hidden="true"></i></div>
+                    </a>
                 </div>
             </div>
             <div class="dash-header-nav">
-                
+
                 <div id="dash-user-pop-box">
                     <div class="dash-header-for-box">
-                        BOX Header
+
                     </div>
                     <div class="input-wrapper-for-box">
-                        <label for="one">One:</label>
-                        <input name="one" class="input-for-box" placeholder="Enter Something" type="text"/>
+
                     </div>
-                    <div class="input-wrapper-for-box">
-                        <label for="one">One:</label>
-                        <input name="one" class="input-for-box" placeholder="Enter Something" type="text"/>
-                    </div>
+
                     <input type="button" name="close" value="Close" id="close" style='width:100px;' onclick="close_form()"> </div>
-                
+
                 <a href="dashb.php">
                     <div class="dash-nav-btn"> <i class="fa fa-th-large" aria-hidden="true"></i> </div>
                 </a>
@@ -129,15 +117,49 @@
             scheduler.showLightbox = function(id) {
                 var ev = scheduler.getEvent(id);
                 scheduler.startLightbox(id, html("dash-user-pop-box"));
+                var boxtitle = document.getElementById("dash-user-pop-box").getElementsByClassName("dash-header-for-box")[0];
+                boxtitle.innerHTML = ev.text;
+                
+                var friends = getdata(ev.crn);
+                
+                var boxtitle = document.getElementById("dash-user-pop-box").getElementsByClassName("input-wrapper-for-box")[0];
+                boxtitle.innerHTML = friends;
 
-                document.getElementById("course").textContent="newtext";
             };
 
             function close_form() {
                 scheduler.endLightbox(false, html("dash-user-pop-box"));
             };
+            
+            function getdata (crn){
+            //url: "assets/php/frienddata.php",
+           // success: function( result ) {
+            return crn
+             //  }
+            };
 
         </script>
+        
+/*
+       
+            function getdata($crn){
+                $uid = $_SESSION['user_ID'];
+                $sql = "SELECT stud_name FROM students WHERE stud_id = ANY (SELECT f.frnd_id FROM `friends` AS f INNER JOIN stud_courseinfo AS s ON f.frnd_id = s.stud_id WHERE f.stud_id ='".$uid."' AND crn = '".$crn."')";
+                
+                $conn   = mysqli_connect("localhost","root","","uoitconnect") or die(db_conn_error());
+                $retval = mysqli_query($conn, $sql);
+                
+                $display;
+                
+                while($row=mysqli_fetch_array($retval))
+                            {
+                                    $display = $row['stud_name']; 
+                            }
+                
+                return $display;
+        }*/
+
+
     </body>
 
 
