@@ -59,7 +59,7 @@
                             <input type="number" class="dash-sch-input-txt" placeholder="| Enter Course CRN: Ex: 43511" name="course-id">
                         </div>
                         <div class="dash-sch-header-wrapper">
-                            <green-txt>Course submitted successfully</green-txt>
+                            <!--<green-txt>Course submitted successfully</green-txt>-->
                         </div>
                     </div>
                     <div class="dash-course-add-wrap">

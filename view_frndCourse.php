@@ -73,10 +73,10 @@
                             while($row=mysqli_fetch_array($retval))
                             {
                                 //Only display lecture
-                                if($row['ctype'] == 'Lecture'){
+                                #if($row['ctype'] == 'Lecture'){
                                     $display = displayCourse($row['crn'], $row['ctitle'], $row['ccode'],$row['section'],$row['location'], $row['stime'], $row['etime'],$row['day'], $row['ctype'],$row['professor'], $id); 
                                     echo $display;
-                                }
+                                #}
                                 $id += 1;
                             }
                         }
@@ -85,7 +85,7 @@
                             $idshow = '"'.$id.'"';
                             $courseD = "<div class='dash-sch-insert-card transition'>
                                             <div class='dash-sch-course-display-card'>
-                                                <div class='dash-course-header'>$strCCODE : $strCTITLE</div>
+                                                <div class='dash-course-header'>$strCCODE : $strCTITLE : $strCTYPE</div>
                                                 <div class='dash-course-content full-card'>Professor: $strPROFF</div>
                                             </div>
                                             <div class='dash-course-more-btn transition' id='".$idshow."' onclick='more($idshow)'><i class='fa fa-sort-desc' aria-hidden='true'></i></div>
