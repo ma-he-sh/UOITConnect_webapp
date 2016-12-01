@@ -60,9 +60,11 @@ if(isset($_POST['courseSubmit'])){
                 }
                 
                 }
-            header("location: ../../user_schedule.php");
+          header("location: ../../user_schedule.php");      
         }
+    header("location: ../../user_schedule.php");
     }
+
 
 
 

@@ -142,14 +142,16 @@ else{
 }
 
 
+/*user course info*/
+/*sql2 = "SELECT *
+        FROM   course_data AS CD
+        INNER JOIN stud_courseinfo AS SCI
+        ON SCI.stud_id=$userID
+        AND SCI.crn=CD.crn
+        ORDER BY CD.crn";*/
 
+  
 
-/*if($row1['stud_id' == $userID]){
-            $strName = $row1['frnd_id'];
-            $strFID  = $row1['frnd_id'];
-            #print $strName;
-            $return_frnds .= displayUser($strName, '', $strFID, '');
-        }*/
 
 #Display User data
 function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displayREM){
