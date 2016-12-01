@@ -46,7 +46,7 @@ if(isset($_POST['strSearchSubmit']) && $_POST['strSearchUser'] != ''){
 
                 $strInfo = 'Field: '.$strField;
                 
-                $SearchFrndResult .= displayUser($strName, $strEmail, $strID, $strInfo, 1, 0);
+                $SearchFrndResult .= displayUser($strName, $strEmail, $strID, $strInfo, 1, 0, $imageID);
             }
         }
     }
@@ -140,15 +140,15 @@ else{
         $strInfo = $row1['stud_field'];
         $strEmail= $row1['stud_email'];
         #print $strName;
-        $return_frnds .= displayUser($strName, $strEmail, $strFID, $strInfo, 0, 1);
+        $return_frnds .= displayUser($strName, $strEmail, $strFID, $strInfo, 0, 1, $imageID);
     }
 }
 
 
 
 #Display User data
-function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displayREM){
-    $data = "<div class='dash-sch-insert-card transition'><div class='dash-sch-frnd-display-card'><div class='dash-sch-frnd-img'></div>
+function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displayREM, $img){
+    $data = "<div class='dash-sch-insert-card transition'><div class='dash-sch-frnd-display-card'><div class='dash-sch-frnd-img'>$img</div>
     <div class='dash-sch-frnd-info-wrapper'><div class='dash-sch-frnd-main-txt'>".$strName."</div><div class='dash-sch-frnd-sec-txt'>".$strInfo."</div><div class='dash-sch-frnd-sec-txt'>".$strEmail."</div></div></div>
     <div class='dash-sch-frnd-addrem-block'><form action='' method='post'><input type='hidden' name='strPromptID' value='".$strID."'/>
     <input type='hidden' name='strHIDNAME' value='".$strName."'/>
