@@ -20,6 +20,7 @@
   <?php
   include 'assets/php/db.php';
   
+  echo "<b>Students with more than five friends</b>";
   #SQL command
   $sql1 = "SELECT stud_name
           FROM STUDENTS AS S

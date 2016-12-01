@@ -28,10 +28,10 @@
   
   #SQL command
   $sql1 = "SELECT stud_name,stud_id
-FROM  STUDENTS
-WHERE stud_id = ANY(  
-SELECT stud_id FROM STUD_COURSEINFO  
-WHERE CRN='40673')
+            FROM  STUDENTS
+            WHERE stud_id = ANY(  
+            SELECT stud_id FROM STUD_COURSEINFO  
+            WHERE CRN='44213')
 ";
   
   echo "<table>";

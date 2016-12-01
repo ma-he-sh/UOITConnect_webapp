@@ -20,7 +20,7 @@
   <?php
   include 'assets/php/db.php';
   
-  
+  echo "<b>List students and number of friends</b>";
   #SQL command
   $sql1 = "SELECT S.stud_name, COUNT(*) as count
           FROM STUDENTS AS S, FRIENDS AS F

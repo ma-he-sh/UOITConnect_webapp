@@ -20,7 +20,7 @@
   <?php
   include 'assets/php/db.php';
   
-  
+  echo "<b>Displaying a list of proffessors and courses</b>";
   #SQL command
   $sql1 = "SELECT DISTINCT ccode, ctitle, professor
           FROM COURSE_DATA";

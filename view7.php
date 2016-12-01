@@ -20,7 +20,7 @@
   <?php
   include 'assets/php/db.php';
   
-  
+  echo "<b>Display list of location and related course</b>";
   #SQL command
   $sql1 = "SELECT DISTINCT location, ctitle
           FROM COURSE_DATA";

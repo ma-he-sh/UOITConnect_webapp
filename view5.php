@@ -18,6 +18,7 @@
   <?php
   include 'assets/php/db.php';
 
+  echo "<b>Display a list of friends who are available in other days except Monday</b>";
   #SQL command
   $sql1 = "SELECT S.stud_id,S.stud_name
   FROM   STUDENTS AS S, STUD_COURSEINFO AS SC, FRIENDS AS F, COURSE_DATA AS CD

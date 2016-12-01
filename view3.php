@@ -22,14 +22,14 @@
   <!--header-->
   <?php
   include 'assets/php/db.php';
-  echo "<b>List of courses that Tim Bernar is registered in</b>";
+  echo "<b>List of courses that Rajiv is registered in</b>";
   
   $post_disp = '';
   
   #SQL command
   $sql1 = "SELECT * FROM COURSE_DATA CD WHERE CD.crn = 
           (SELECT SC.crn FROM STUD_COURSEINFO SC WHERE SC.stud_id = (
-          SELECT S.stud_id FROM STUDENTS S WHERE stud_name = 'Tim Bernar'))";
+          SELECT S.stud_id FROM STUDENTS S WHERE stud_name = 'Mahesh'))";
   
   echo "<table>";
   echo "<tr><th>cid</th><th>crn</th><th>ctitle</th><th>ccode</th><th>section</th><th>week</th><th>stime</th><th>etime</th><th>day</th><th>location</th><th>sdate</th><th>edate</th><th>ctype</th><th>professor</th></tr>";
