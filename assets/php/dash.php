@@ -142,16 +142,6 @@ else{
 }
 
 
-/*user course info*/
-/*sql2 = "SELECT *
-        FROM   course_data AS CD
-        INNER JOIN stud_courseinfo AS SCI
-        ON SCI.stud_id=$userID
-        AND SCI.crn=CD.crn
-        ORDER BY CD.crn";*/
-
-  
-
 
 #Display User data
 function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displayREM){
@@ -175,6 +165,88 @@ function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displa
     return $data;
 }
 
+
+
+/*
+*Retrieve all the courses enrolled
+*/
+
+$return_courses = '';
+$sql2 = "SELECT DISTINCT CD.crn, CD.ctitle, CD.ccode, CD.ctype
+        FROM  course_data AS CD
+        INNER JOIN stud_courseinfo AS SC
+              ON SC.crn = CD.crn
+        WHERE SC.stud_id = $userID"; 
+
+$retval = mysqli_query($conn, $sql2);
+
+$count = 0;
+if ($result=mysqli_query($conn,$sql2)){
+  $count=mysqli_num_rows($result);
+}
+if($count == 0){
+  #echo 'No result';
+  $$return_courses = 'NO results';
+}
+#Search for the query data  
+else{
+    while($row1 = mysqli_fetch_array($retval, MYSQLI_ASSOC)){
+        #if($row1['ctype'] == 'Lecture'){
+            $strCRN = $row1['crn'];
+            $strCTITLE  = $row1['ctitle'];
+            $strCCODE = $row1['ccode'];
+            $strCTYPE= $row1['ctype'];
+            #display courses
+            $return_courses .= display_course($strCRN, $strCTITLE, $strCCODE, $strCTYPE);
+        #}
+    }
+}
+
+function display_course($CRN,$CTITLE,$CCODE,$TYPE){
+    $course = "<div class='dash-course-tab-holder'>
+                <form action='' method='POST'>
+                    <div class='dash-course-tab'>
+                        <b>$CRN:</b>  $CCODE:$CTITLE ($TYPE)  
+                    </div>
+                    <div class='dash-course-tab-btn-wrapper'>
+                        <input type='hidden' name='strDELCRN' value='$CRN'/>
+                        <button name='deleteCourse' class='dash-sch-frnd-remove'><i class='fa fa-times' aria-hidden='true'></i> DELETE</button>
+                    </div>
+                </div>
+            </form>";
+    return $course;
+}
+
+
+
+/*
+*Delete Enrolled Course
+*/
+$return_msg = '';
+if(isset($_POST['deleteCourse'])){
+    $strDELCRN = $_POST['strDELCRN'];
+
+    #Delete user course
+    $sql = "DELETE FROM stud_courseinfo
+            WHERE  stud_id = $userID
+            AND    crn = $strDELCRN";
+
+    #Delete events
+    $sql2 = "DELETE FROM events
+             WHERE crn=$strDELCRN
+             AND   user=$userID";
+
+    $retval = mysqli_query($conn, $sql);
+    $retval2 = mysqli_query($conn, $sql2);
+
+    if(!$retval && !$retval2){
+        $return_msg = error_msg('Something went wrong');
+    }
+    else{
+        $return_msg = good_msg('Course Deleted');
+        printf("<script>location.href='user_schedule.php'</script>");
+    }
+}
 
 
 

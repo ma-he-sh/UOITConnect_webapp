@@ -65,16 +65,32 @@
                 </form>
             </div>
             <!--display current enrolled courses-->
-            <div class="dash-course-add-wrap">
-                <div class="dash-course-info-wrapper">
-                   <div class="dash-sch-header">Courses currently enrolled in:</div>
-                   <div class="dash-course-tab">
-                      Data
-                   </div>
-                   <div class="dash-course-tab-btn-wrapper"></div>
-                </div>  
+            <div class='dash-course-add-wrap'>
+                <div class='dash-course-info-wrapper'>
+                   <div class='dash-sch-header'>Courses currently enrolled in:</div>
+
+                    <!-- display courses-->
+                    <?php
+                        echo $return_courses;
+                    ?>
+
+<!--
+                    <div class='dash-course-tab-holder'>
+                        <form action='' method='POST'>
+                        <div class='dash-course-tab'>
+                        Data
+                        </div>
+                        <div class='dash-course-tab-btn-wrapper'>
+                            <button name='deleteCourse' class='dash-sch-frnd-remove'><i class='fa fa-times' aria-hidden='true'></i> DELETE</button>
+                        </div>
+                        </div>
+                        </form>
+                    </div>  -->
             </div>
       </div>
+      <div class="notify-wrapper">
+      <?php echo $return_msg; ?>
+    </div>
     </body>
     <script src="assets/js/action.js"></script>
 

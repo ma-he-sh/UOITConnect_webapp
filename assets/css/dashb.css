@@ -382,7 +382,7 @@
     font-size: 18px;
     padding: 5px;
     box-sizing: border-box;
-  border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #eee;
 }
 
 .dash-frnd-header {
@@ -663,8 +663,8 @@
 .dash-course-add-wrap {
     width: 100%;
     height: auto;/*60px*/
-  float: left;
     float: left;
+    margin-bottom: 10px;
 }
 
 .dash-submit-btn-wrap {
@@ -829,7 +829,7 @@
   box-sizing: border-box;
 }
 
-<<<<<<< HEAD
+
 .dash-course-info-wrapper {
   width: 100%;
   height: auto;
@@ -852,13 +852,18 @@
 
 .dash-course-tab-btn-wrapper {
   width: 100%;
-  height: 30px;
+  height: auto;
   float: left;
   background-color: #eee;
   border-left: 5px solid #e74c3c;
   box-sizing: border-box;
-=======
-#dash-user-pop-box transition {
-    
->>>>>>> origin/master
+}
+.dash-course-tab-holder {
+  margin-top: 4px;
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.dash-course-tab-holder:hover{
+  background-color: rgba(33,150,243,0.4);
 }
