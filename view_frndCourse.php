@@ -60,12 +60,21 @@
                         if($_GET){
                             $retriveID = $_GET['frndID'];
                             
-                            $sql = "SELECT *
+                            /*$sql = "SELECT *
                                     FROM course_data AS CD
                                     JOIN stud_courseinfo AS SC
                                     WHERE SC.stud_id = $retriveID
                                     AND SC.crn = CD.crn
-                                    ORDER BY CD.crn";
+                                    ORDER BY CD.crn";*/
+                          $sql = "SELECT * 
+                                  FROM course_data AS CD 
+                                  WHERE CD.crn IN
+                                  (SELECT st1.crn
+                                  FROM stud_courseinfo as st1 
+                                  INNER JOIN stud_courseinfo as st2
+                                  ON st1.crn = st2.crn
+                                  WHERE st1.stud_id = $retriveID
+                                  AND st2.stud_id = $userID)";
                             
                             $retval = mysqli_query($conn, $sql);
                             

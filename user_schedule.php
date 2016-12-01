@@ -33,19 +33,16 @@
                 </a>
                 <div class="dash-nav-seperator"> <i class="fa fa-angle-right" aria-hidden="true"></i> </div>
                 <a href="user_schedule.php">
-                    <div class="dash-nav-txt-wrapper">Your Schedule</div>
+                    <div class="dash-nav-txt-wrapper">Courses</div>
                 </a>
             </div>
         </div>
         <!--content-->
         <div class="dash-user-sch-wrapper">
             <div class="dash-sch-wrapper">
-                <div class="dash-sch-header">Your schedule</div>
+                <div class="dash-sch-header">Courses</div>
                 <div class="dash-sch-term-wrapper">
-                    <div class="dash-sch-header-txt">Select Term</div>
-                    <div class="dash-sch-header-txt season-btn transition">Fall</div>
-                    <div class="dash-sch-header-txt season-btn transition">Winter</div>
-                    <div class="dash-sch-header-txt season-btn transition">Summer</div>
+                    <div class="dash-sch-header-txt">Add Courses</div>
                     <a href="user_calender.php">
                         <div class="dash-sch-header-btn season-btn transition" onclick="">View Your Calender <i class="fa fa-calendar" aria-hidden="true"></i></div>
                     </a>
@@ -67,16 +64,33 @@
                     </div>
                 </form>
             </div>
-            <div class="dash-course-add-wrap">
+            <!--display current enrolled courses-->
+            <div class='dash-course-add-wrap'>
+                <div class='dash-course-info-wrapper'>
+                   <div class='dash-sch-header'>Courses currently enrolled in:</div>
+
+                    <!-- display courses-->
                     <?php
-
-                        #sql2 = "SELECT *
-                                #FROM   ";
-
-
+                        echo $return_courses;
                     ?>
-            </div>
 
+<!--
+                    <div class='dash-course-tab-holder'>
+                        <form action='' method='POST'>
+                        <div class='dash-course-tab'>
+                        Data
+                        </div>
+                        <div class='dash-course-tab-btn-wrapper'>
+                            <button name='deleteCourse' class='dash-sch-frnd-remove'><i class='fa fa-times' aria-hidden='true'></i> DELETE</button>
+                        </div>
+                        </div>
+                        </form>
+                    </div>  -->
+            </div>
+      </div>
+      <div class="notify-wrapper">
+      <?php echo $return_msg; ?>
+    </div>
     </body>
     <script src="assets/js/action.js"></script>
 
