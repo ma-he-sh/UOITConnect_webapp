@@ -888,3 +888,31 @@
 .dash-view-box:hover{
   border: 1px solid #2196f3;
 }
+
+.display-pop-up-name {
+  width: 100%;
+  height: 45px;
+  float: left;
+  background-color: white;
+  font-size: 18px;
+  padding: 5px;
+  box-sizing: border-box;
+  flex: 1;
+  cursor: pointer;
+}
+.display-pop-up-name:hover{
+  background-color: rgba(33, 150, 243, 0.4);
+}
+
+.display-pop-up-user-flex {
+  width: 100%;
+  height: auto;
+  float: left;
+  display: flex;
+}
+
+.display-img {
+  width: 45px;
+  height: 45px;
+  float: left;
+}

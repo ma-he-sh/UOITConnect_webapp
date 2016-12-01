@@ -10,9 +10,13 @@ $retval = mysqli_query($conn, $sql);
 
 while($row=mysqli_fetch_array($retval))
 {
-
-    echo($row['stud_name']); 
-        echo("<br>");
+    #echo($row['stud_name']); 
+    #echo("<br>");
+    echo "<div class='display-pop-up-user-flex'>
+     <div class='display-img'></div>
+      <div class='display-pop-up-name'>".$row['stud_name']."
+      </div>
+    </div>";
 }
 
                 
