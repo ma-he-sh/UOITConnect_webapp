@@ -10,16 +10,25 @@
   include 'assets/php/dash.php';
   if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
-<style>
+
+ <style>
+    table{
+    width: 100%;
+      text-align: center;
+    border-collapse: collapse;
+  }
   table,
   th,
   td {
-    border: 1px solid black;
+    border: 1px solid #eee;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
-</style>
+  </style>
 
 <body>
   <!--header-->
+  <div class="dash-view-box transition">
   <?php
   include 'assets/php/db.php';
   echo "<b>Displaying student name and their friends id</b>";
@@ -44,7 +53,7 @@
   
   mysqli_close($conn);
 ?>
-
+  </div>
 </body>
 
 </html>

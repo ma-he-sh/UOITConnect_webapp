@@ -867,3 +867,24 @@
 .dash-course-tab-holder:hover{
   background-color: rgba(33,150,243,0.4);
 }
+
+.dash-view-box {
+  width: 80%;
+  max-width: 1080px;
+  min-width: 300px;
+  height: auto;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  background-color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+.dash-view-box:hover{
+  border: 1px solid #2196f3;
+}

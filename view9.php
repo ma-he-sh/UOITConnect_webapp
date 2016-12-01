@@ -7,16 +7,24 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
-<style>
+ <style>
+    table{
+    width: 100%;
+      text-align: center;
+    border-collapse: collapse;
+  }
   table,
   th,
   td {
-    border: 1px solid black;
+    border: 1px solid #eee;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
-</style>
+  </style>
 
 <body>
   <!--header-->
+  <div class="dash-view-box transition">
   <?php
   include 'assets/php/db.php';
   
@@ -28,7 +36,7 @@
           GROUP BY S.stud_id";
   
   echo "<table>";
-  echo "<tr><th>Student Name</th><th>Friends</th></tr>";
+  echo "<tr><th>Student Name</th><th># Friends</th></tr>";
   
   $retval1 = mysqli_query($conn, $sql1);
   while($row1 = mysqli_fetch_array($retval1)){
@@ -42,7 +50,7 @@
   
   mysqli_close($conn);
 ?>
-
+  </div>
 </body>
 
 </html>

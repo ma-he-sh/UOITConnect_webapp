@@ -7,20 +7,28 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 
-<style>
+ <style>
+    table{
+    width: 100%;
+      text-align: center;
+    border-collapse: collapse;
+  }
   table,
   th,
   td {
-    border: 1px solid black;
+    border: 1px solid #eee;
+    padding-top: 4px;
+    padding-bottom: 4px;
   }
-</style>
+  </style>
 
 <body>
   <!--header-->
+  <div class="dash-view-box transition">
   <?php
   include 'assets/php/db.php';
   
-  echo "<b>Display list of location and related course</b>";
+  echo "<b>Display list of location and related courses</b>";
   #SQL command
   $sql1 = "SELECT DISTINCT location, ctitle
           FROM COURSE_DATA";
@@ -40,7 +48,7 @@
   
   mysqli_close($conn);
 ?>
-
+  </div>
 </body>
 
 </html>

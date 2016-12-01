@@ -68,7 +68,7 @@ include 'assets/php/dash.php';
                     </div>
                 </div>
             </a>
-            <a href="about.html">
+            <a href="about.php">
                 <div class="dash-nav-card min-card">
                     <div class="dash-card transition">
                         <div class="dash-card-logo"><i class="fa fa-connectdevelop fa-3x" aria-hidden="true"></i></div>
