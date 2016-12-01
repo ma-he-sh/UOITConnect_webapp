@@ -9,8 +9,8 @@
     <script src="assets/js/codebase/dhtmlxscheduler.js" type="text/javascript"></script>
 </head>
 <?php
-    #if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
   include 'assets/php/dash.php';
+  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
 
     <body>
@@ -18,7 +18,7 @@
         <div class="dash-header-container">
             <div class="dash-header">
                 <div class="dash-user-container">
-                    <div class="dash-user-img-id"></div>
+                    <div class="dash-user-img-id"><?php echo $imageID; ?></div>
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>

@@ -6,7 +6,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/main.css"> </head>
 <?php
-include 'assets/php/dash.php';
+  include 'assets/php/dash.php';
+  if(!$_SESSION){printf("<script>location.href='signin.php'</script>");}
 ?>
 
     <body>
@@ -14,7 +15,7 @@ include 'assets/php/dash.php';
         <div class="dash-header-container">
             <div class="dash-header">
                 <div class="dash-user-container">
-                    <div class="dash-user-img-id"></div>
+                    <div class="dash-user-img-id"><?php echo $imageID; ?></div>
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
@@ -33,7 +34,7 @@ include 'assets/php/dash.php';
         <div class="dash-nav-wrapper">
             <div class="dash-nav-card max-card">
                 <div class="dash-card transition">
-                    <div class="dash-user-img"><i class="fa fa-upload fa-2x" aria-hidden="true"></i></div>
+                    <div class="dash-user-img"><?php echo $imageID; ?></div>
                     <div class="dash-name-txt"><b><?php  echo "Welcome $userName"; ?></b></div>
                     <div class="dash-more-info-txt"></div>
                     <div class="dash-more-info-txt">Currently You have: SOFE3700U</div>

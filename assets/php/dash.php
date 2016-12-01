@@ -9,6 +9,9 @@ include 'session.php';
  #$userName = $_SESSION['user_name'];
 
 
+/*imageholder*/
+$imageID ='<img src="assets/img_svg/img_place.png" width="100%" height="100%">';
+
 /*
 * Search friends
 */

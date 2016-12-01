@@ -24,7 +24,7 @@
             <div class="dash-header">
 
                 <div class="dash-user-container">
-                    <div class="dash-user-img-id"></div>
+                    <div class="dash-user-img-id"><?php echo $imageID; ?></div>
                     <div class="dash-user-name-txt">
                         <?php  echo $userName; ?>
                     </div>
