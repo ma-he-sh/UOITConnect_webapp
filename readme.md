@@ -4,5 +4,3 @@
 #UOITConnect
 
 ##Stay connected with your friends
-
-###SETUP>

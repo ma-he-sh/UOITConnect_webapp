@@ -175,7 +175,13 @@ function displayUser($strName, $strEmail, $strID, $strInfo, $displayADD, $displa
 */
 
 $return_courses = '';
-$sql2 = "SELECT DISTINCT CD.crn, CD.ctitle, CD.ccode, CD.ctype
+$return_current = '';
+$return_location= '';
+$getDATE;
+$getDATENOW=date("H:i:s");
+/*DEBUG POINT*/
+#$getDATENOW="08:57:00";
+$sql2 = "SELECT DISTINCT CD.crn, CD.ctitle, CD.ccode, CD.ctype, CD.stime,  CD.etime, CD.day, CD.location
         FROM  course_data AS CD
         INNER JOIN stud_courseinfo AS SC
               ON SC.crn = CD.crn
@@ -189,7 +195,9 @@ if ($result=mysqli_query($conn,$sql2)){
 }
 if($count == 0){
   #echo 'No result';
-  $$return_courses = 'NO results';
+  $$return_courses = 'NO RESULT';
+  $return_current = 'NO RESULT';
+  $return_location= 'NO LOCATION DATA';
 }
 #Search for the query data  
 else{
@@ -201,6 +209,22 @@ else{
             $strCTYPE= $row1['ctype'];
             #display courses
             $return_courses .= display_course($strCRN, $strCTITLE, $strCCODE, $strCTYPE);
+      
+            $getDATE = getdate(date('U'));
+            $getDATE = "$getDATE[weekday]";
+            /*DEBUG POINT*/
+            #$getDATE = 'Thursday';
+      
+            if($row1['day'] == $getDATE){
+              if($getDATENOW > $row1['stime'] && $getDATENOW < $row1['etime']){
+                $return_current  = $row1['ccode'];
+                $return_location = $row1['location']; 
+              }
+            }
+            else{
+                $return_current  = "NOT AVAILABLE";
+                $return_location = "NOT AVAILABLE";  
+            }
         #}
     }
 }

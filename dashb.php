@@ -37,8 +37,8 @@
                     <div class="dash-user-img"><?php echo $imageID; ?></div>
                     <div class="dash-name-txt"><b><?php  echo "Welcome $userName"; ?></b></div>
                     <div class="dash-more-info-txt"></div>
-                    <div class="dash-more-info-txt">Currently You have: SOFE3700U</div>
-                    <div class="dash-more-info-txt">Location: UA3450</div>
+                    <div class="dash-more-info-txt">Currently You have: <?php echo $return_current ?></div>
+                    <div class="dash-more-info-txt">Location: <?php echo $return_location; ?></div>
                 </div>
             </div>
             <a href="user_addfrnd.php">
