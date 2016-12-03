@@ -52,9 +52,9 @@
   echo "<b>Students with more than five friends</b>";
   #SQL command
   $sql1 = "SELECT stud_name
-          FROM STUDENTS AS S
+          FROM students AS S
           WHERE (SELECT COUNT(*)
-          FROM FRIENDS AS F
+          FROM friends AS F
           WHERE F.stud_id=S.stud_id)>5";
   
   echo "<table>";

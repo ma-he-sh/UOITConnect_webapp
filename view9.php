@@ -52,7 +52,7 @@
   echo "<b>List students and number of friends</b>";
   #SQL command
   $sql1 = "SELECT S.stud_name, COUNT(*) as count
-          FROM STUDENTS AS S, FRIENDS AS F
+          FROM students AS S, friends AS F
           WHERE F.stud_id=S.stud_id
           GROUP BY S.stud_id";
   

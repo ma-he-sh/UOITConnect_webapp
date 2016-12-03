@@ -56,9 +56,9 @@
 
       #SQL command
       $sql1 = "SELECT DISTINCT S.stud_name, CD.ccode, CD.ctitle, CD.ctype
-              FROM STUDENTS AS S
-              JOIN STUD_COURSEINFO AS SC ON S.stud_id = SC.stud_id
-              JOIN COURSE_DATA AS CD ON SC.crn = CD.crn
+              FROM students AS S
+              JOIN stud_courseinfo AS SC ON S.stud_id = SC.stud_id
+              JOIN course_data AS CD ON SC.crn = CD.crn
               ORDER BY S.stud_name";
 
       echo "<table>";

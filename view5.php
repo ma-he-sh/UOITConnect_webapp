@@ -51,7 +51,7 @@
   echo "<b>Display a list of friends who are available in other days except Monday</b>";
   #SQL command
   $sql1 = "SELECT DISTINCT S.stud_name
-  FROM   STUDENTS AS S, STUD_COURSEINFO AS SC, FRIENDS AS F, COURSE_DATA AS CD
+  FROM   STUDENTS AS S, stud_courseinfo AS SC, friends AS F, course_data AS CD
   WHERE  SC.stud_id=S.stud_id
                 AND F.frnd_id=S.stud_id
                 AND SC.crn=CD.crn

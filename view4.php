@@ -54,7 +54,7 @@
   $post_disp = '';
   
   #SQL command
-  $sql1 = "SELECT S.stud_name , F.frnd_id AS frnd_id FROM STUDENTS S, FRIENDS F WHERE S.stud_id = F.stud_id ORDER BY S.stud_name";
+  $sql1 = "SELECT S.stud_name , F.frnd_id AS frnd_id FROM students S, friends F WHERE S.stud_id = F.stud_id ORDER BY S.stud_name";
    
   echo "<table>";
   echo "<tr><th>Student Name</th><th>Friend ID</th>";

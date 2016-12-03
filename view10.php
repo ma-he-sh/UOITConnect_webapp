@@ -55,7 +55,7 @@
   
   #SQL command
   $sql1 = "SELECT stud_name, stud_email
-FROM STUDENTS
+FROM students
 WHERE stud_field LIKE '%Engineering%'
 ";
    

@@ -52,7 +52,7 @@
   echo "<b>Displaying a list of proffessors and courses</b>";
   #SQL command
   $sql1 = "SELECT DISTINCT ccode, ctitle, professor
-          FROM COURSE_DATA";
+          FROM course_data";
   
   echo "<table>";
   echo "<tr><th>Course Title</th><th>Course Code</th><th>Course Professor</th></tr>";

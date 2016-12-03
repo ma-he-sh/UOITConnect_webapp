@@ -55,9 +55,9 @@
   
   #SQL command
   $sql1 = "SELECT stud_name,stud_id
-            FROM  STUDENTS
+            FROM  students
             WHERE stud_id = ANY(  
-            SELECT stud_id FROM STUD_COURSEINFO  
+            SELECT stud_id FROM stud_courseinfo  
             WHERE CRN='44213')
 ";
   

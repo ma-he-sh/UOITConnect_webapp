@@ -55,14 +55,14 @@
   
   #SQL command
   $sql1 = "SELECT * 
-          FROM COURSE_DATA CD 
+          FROM course_data CD 
           WHERE CD.crn IN 
           (SELECT SC.crn 
-            FROM STUD_COURSEINFO SC 
+            FROM stud_courseinfo SC 
             WHERE SC.stud_id = 
             (
             SELECT S.stud_id 
-            FROM STUDENTS S 
+            FROM students S 
             WHERE stud_name = 'Mahesh'
             )
           )";

@@ -52,7 +52,7 @@
   echo "<b>Display list of location and related courses</b>";
   #SQL command
   $sql1 = "SELECT DISTINCT location, ctitle
-          FROM COURSE_DATA";
+          FROM course_data";
   
   echo "<table>";
   echo "<tr><th>Location</th><th>Course Title</th></tr>";
